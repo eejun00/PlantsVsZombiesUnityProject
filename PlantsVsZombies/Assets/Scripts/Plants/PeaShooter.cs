@@ -11,6 +11,7 @@ public class PeaShooter : Plant
     private float shootAfter = default;
     private Transform firePoint;
 
+
     private void Awake()
     {
         firePoint = gameObject.FindChildObject("FirePoint").transform;

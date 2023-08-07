@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : MonoBehaviour
+public class SunFlower : Plant
 {
-    public int cost = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +14,5 @@ public class Plant : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void Die()
-    {
-        Destroy(gameObject);
     }
 }
