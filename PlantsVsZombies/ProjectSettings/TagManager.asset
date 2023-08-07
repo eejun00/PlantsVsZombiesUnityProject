@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie
   - Bullet
+  - Tile
   layers:
   - Default
   - TransparentFX
