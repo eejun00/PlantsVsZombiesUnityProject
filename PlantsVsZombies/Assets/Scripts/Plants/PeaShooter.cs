@@ -11,6 +11,9 @@ public class PeaShooter : Plant
     private float shootAfter = default;
     private Transform firePoint;
 
+    private Vector2 lastPosition;
+    private float timeSinceLastMove = 0f;
+    private float maxIdleTime = 1f; // 1초
 
     private void Awake()
     {
@@ -20,17 +23,34 @@ public class PeaShooter : Plant
     void Start()
     {
         shootAfter = 0f;
+        lastPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        shootAfter += Time.deltaTime;
-        if(shootAfter > attackSpeed)
+        // 현재 위치와 이전 위치를 비교하여 이동했는지 검사
+        if (Vector2.Distance(transform.position, lastPosition) > 0.1f)
         {
-            shootAfter = 0f;
-            GameObject bullet = Instantiate(bulletPrefab,firePoint.position
-                , Quaternion.identity);
+            timeSinceLastMove = 0f; // 이동이 감지되면 시간을 초기화
+        }
+        else
+        {
+            timeSinceLastMove += Time.deltaTime; // 이동이 없으면 시간 증가
+        }
+
+        lastPosition = transform.position;
+
+        // 1초 이상 움직이지 않았을 경우 특정 동작 실행
+        if (timeSinceLastMove >= maxIdleTime)
+        {
+            shootAfter += Time.deltaTime;
+            if (shootAfter > attackSpeed)
+            {
+                shootAfter = 0f;
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position
+                    , Quaternion.identity);
+            }
         }
     }
 }

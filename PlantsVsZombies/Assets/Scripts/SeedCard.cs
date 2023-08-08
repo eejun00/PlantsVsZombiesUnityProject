@@ -9,9 +9,13 @@ public class SeedCard : MonoBehaviour
     public GameObject seedPrefab;
     private TMP_Text seedCost;
     private Image seedImage;
+    private GameObject towerSpawner;
+    private TowerSpawner towerSpawnerScript;
 
     private void Awake()
     {
+        towerSpawner = GFunc.GetRootObject("TowerSpawner");
+        towerSpawnerScript = towerSpawner.GetComponent<TowerSpawner>();
         seedCost = gameObject.FindChildComponent<TMP_Text>("SeedCost");
         seedImage = gameObject.FindChildComponent<Image>("SeedImg");
     }
@@ -41,7 +45,8 @@ public class SeedCard : MonoBehaviour
 
     public void OnClickButton()
     {
-        if(GameManager.instance.stagePlaying == false)
+        towerSpawnerScript.ReadyToSpawnTower(seedPrefab);
+        if (GameManager.instance.stagePlaying == false)
         {
 
         }   // if: 스테이지를 진행중이라면

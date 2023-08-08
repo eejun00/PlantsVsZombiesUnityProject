@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 9046421310390371075}
   - component: {fileID: -8085617009527777652}
   - component: {fileID: -8328059870087282021}
-  - component: {fileID: 1185938419507659927}
+  - component: {fileID: -5696853944356082788}
   m_Layer: 0
-  m_Name: BasicShooter
+  m_Name: BasicShooter 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1185938419507659927
+--- !u!114 &-5696853944356082788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

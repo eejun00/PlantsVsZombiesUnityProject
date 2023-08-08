@@ -5,16 +5,17 @@ using UnityEngine;
 public class Plant : MonoBehaviour
 {
     public int cost = 50;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+
+
     }
 
     public void Die()
