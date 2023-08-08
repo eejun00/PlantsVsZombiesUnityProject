@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3007135272379783909}
   - component: {fileID: -4571655909715876721}
   - component: {fileID: 8871504179854572054}
+  - component: {fileID: -3458490581992796806}
   m_Layer: 0
   m_Name: SunFlower
   m_TagString: Untagged
@@ -99,6 +100,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
+--- !u!114 &-3458490581992796806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058102251100259419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c620eca2af6cb4ba8a9e0bdd53b280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7533139962203593488
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,9 +6,11 @@ using UnityEngine.EventSystems;
 public class Sun : MonoBehaviour,IPointerClickHandler
 {
     public int sunCost = 50;
-    private float sunSpeed = 5f;
+    private float sunSpeed = 10f;
     private Transform sunDestination;
     private GameObject rootObjDest;
+    private bool isClick = default;
+    private float distance = default;
 
     private void Awake()
     {
@@ -25,12 +27,21 @@ public class Sun : MonoBehaviour,IPointerClickHandler
     void Update()
     {
         
+        if(isClick)
+        {
+            distance = Vector2.Distance(transform.position, sunDestination.position);
+            Vector2 moveDirection = (sunDestination.position - transform.position).normalized;
+            transform.Translate(moveDirection * Time.deltaTime * sunSpeed);
+            if(distance < 1f)
+            {
+                GameManager.instance.AddCost(sunCost);
+                Destroy(gameObject);
+            }
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
-    {
-        Debug.Log("클릭했다.");
-        GameManager.instance.AddCost(sunCost);
-        transform.Translate(sunDestination.position * Time.deltaTime * sunSpeed);        
+    {  
+        isClick = true;         
     }
 }
