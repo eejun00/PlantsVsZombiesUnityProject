@@ -263,11 +263,7 @@ GameObject:
   - component: {fileID: 7902051666840483896}
   - component: {fileID: 4162109674484573344}
   - component: {fileID: -1510510412308019983}
-<<<<<<< HEAD
   - component: {fileID: 7569612700498651189}
-=======
-  - component: {fileID: 1367235766950355492}
->>>>>>> origin/Kjh
   m_Layer: 0
   m_Name: Wallnut
   m_TagString: Untagged
@@ -358,36 +354,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
-<<<<<<< HEAD
 --- !u!114 &7569612700498651189
 MonoBehaviour:
-=======
---- !u!95 &1367235766950355492
-Animator:
-  serializedVersion: 5
->>>>>>> origin/Kjh
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9034682420062068827}
   m_Enabled: 1
-<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9c620eca2af6cb4ba8a9e0bdd53b280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f94935593c4f7243b5c799d7b7d25b7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
->>>>>>> origin/Kjh
