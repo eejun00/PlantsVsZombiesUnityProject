@@ -13,6 +13,7 @@ public class SunSpawner : MonoBehaviour
     void Start()
     {
         spawnTime = 5f;
+        posY = 4f;
     }
 
     // Update is called once per frame

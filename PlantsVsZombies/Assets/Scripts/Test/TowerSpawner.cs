@@ -24,7 +24,7 @@ public class TowerSpawner : MonoBehaviour
 
     public GameObject PlantPrefab;
     public GameObject PlantImgPrefab;
-
+    private int plantingCost = default;
 
     
 
@@ -38,12 +38,15 @@ public class TowerSpawner : MonoBehaviour
 
         // 타워 건설 가능 여부 확인
         // 타워를 건설할 만큼 돈이 없으면 타워 건설 x
-        //if (towerTemplate[towerType].weapon[0].cost > playerGold.CurrentGold)
-        //{
-        //    // 골드가 부족해서 타워 건설이 불가능하다고 출력
-        //    systemTextViewer.PrintText(SystemType.Money);
-        //    return;
-        //}
+        Plant plantscript = plantPrefab.GetComponent<Plant>();
+        plantingCost = plantscript.cost;
+        if (plantingCost > GameManager.instance.cost)
+        {
+            // 골드가 부족해서 타워 건설이 불가능하다고 출력
+            //systemTextViewer.PrintText(SystemType.Money);
+            return;
+        }
+
 
         // 타워 건설 버튼을 눌렀다고 설정
         isOnTowerButton = true;
@@ -82,6 +85,7 @@ public class TowerSpawner : MonoBehaviour
         Vector3 position = tileTransform.position;
         GameObject clone = Instantiate(PlantPrefab, position, Quaternion.identity);        
         followMousePosition = clone.GetComponent<ObjectFollowMousePosition>();
+        GameManager.instance.AddCost(-plantingCost);
         if (followMousePosition != null)
         {
             followMousePosition.enabled = false; // ObjectFollowMousePosition 스크립트 비활성화

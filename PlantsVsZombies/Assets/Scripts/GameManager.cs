@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isGameover = false;   // 게임 오버 확인 변수
     public bool stagePlaying = false; // 스테이지를 진행하고 있는지에 대한 변수
 
-    private int cost = default; // 햇빛 코스트 변수
+    public int cost = default; // 햇빛 코스트 변수
     public GameObject gameoverUi;
     public TMP_Text costText;
 

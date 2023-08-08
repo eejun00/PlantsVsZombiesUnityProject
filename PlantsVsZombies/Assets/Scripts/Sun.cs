@@ -51,7 +51,6 @@ public class Sun : MonoBehaviour,IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("클릭했다");
         isClick = true;         
     }
 }
