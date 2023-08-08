@@ -47,7 +47,6 @@ public class TowerSpawner : MonoBehaviour
 
         // 타워 건설 버튼을 눌렀다고 설정
         isOnTowerButton = true;
-        GameManager.instance.planting = true;
         // 마우스를 따라나니는 임시 타워 생성
         followTowerClone = Instantiate(plantPrefab);
         PlantPrefab = plantPrefab;
@@ -74,7 +73,6 @@ public class TowerSpawner : MonoBehaviour
 
         // 다시 타워 건설 버튼을 눌러서 타워를 건설하도록 변수 설정
         isOnTowerButton = false;
-        GameManager.instance.planting = false;
 
         // 타워가 건설되어 있으므로 설정
         tile.IsBuildTower = true;
@@ -108,7 +106,6 @@ public class TowerSpawner : MonoBehaviour
             // ESC키 또는 마우스 오른쪽 버튼을 눌렀을 때 타워 건설 취소
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
             {
-                GameManager.instance.planting = false;
                 isOnTowerButton = false;
                 // 마우스를 따라다니는 임시 타워 삭제
                 Destroy(followTowerClone);

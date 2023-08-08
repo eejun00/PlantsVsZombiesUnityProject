@@ -11,6 +11,7 @@ public class Sun : MonoBehaviour,IPointerClickHandler
     private GameObject rootObjDest;
     private bool isClick = default;
     private float distance = default;
+    private float downDistanceY = default;
 
     private void Awake()
     {
@@ -20,7 +21,8 @@ public class Sun : MonoBehaviour,IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-        
+        isClick = false;
+        downDistanceY = Random.Range(-2.5f, 2f);
     }
 
     // Update is called once per frame
@@ -38,10 +40,18 @@ public class Sun : MonoBehaviour,IPointerClickHandler
                 Destroy(gameObject);
             }
         }
+        else
+        {
+            if (gameObject.transform.position.y > downDistanceY)
+            {
+                transform.Translate(Vector2.down * Time.deltaTime * 3f);
+            }        
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
-    {  
+    {
+        Debug.Log("클릭했다");
         isClick = true;         
     }
 }
