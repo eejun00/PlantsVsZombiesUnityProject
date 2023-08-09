@@ -10,16 +10,20 @@ public class GameManager : MonoBehaviour
     
     public bool isGameover = false;   // 게임 오버 확인 변수
     public bool stagePlaying = false; // 스테이지를 진행하고 있는지에 대한 변수
+    public bool isStageClear = false; // 스테이지를 클리어했는지 확인해주는 변수
+    public int zombieDeathCount = default;
 
     public int cost = default; // 햇빛 코스트 변수
     public GameObject gameoverUi;
     public TMP_Text costText;
+    public GameObject gameClearUi;
 
     private void Awake()
     {
         if (instance.IsValid() == false)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -37,7 +41,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isStageClear && isGameover == false && zombieDeathCount <= 0)
+        {
+            OnClearUi();
+        }
+    }
+
+    public void OnClearUi()
+    {
+        gameClearUi.SetActive(true);
     }
 
     public void AddCost(int cost_)

@@ -83,6 +83,7 @@ public class Zombies : MonoBehaviour
     {
         // 좀비가 사망할 때의 처리, 예를 들어 사망 애니메이션 재생 등을 수행할 수 있음
         Destroy(gameObject); // 일단 오브젝트 파괴로 처리
+        GameManager.instance.zombieDeathCount -= 1;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

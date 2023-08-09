@@ -33,16 +33,26 @@ public class ZombieSpawner : MonoBehaviour
     public GameObject zombiePrefab; // 좀비 프리팹
     public float spawnInterval = 5f; // 좀비 생성 간격
     public float[] allowedYPositions; // 좀비 생성 허용 y좌표 배열
+    public int zombieCount = 5;
 
     private void Start()
     {
         // spawnInterval마다 SpawnZombie 함수를 호출
+        GameManager.instance.zombieDeathCount = zombieCount;
         StartCoroutine(SpawnZombieRoutine());
+    }
+
+    private void Update()
+    {
+        if(zombieCount <= 0 && GameManager.instance.isStageClear == false)
+        {
+            GameManager.instance.isStageClear = true;
+        }
     }
 
     IEnumerator SpawnZombieRoutine()
     {
-        while (true)
+        while (zombieCount > 0)
         {
             // 랜덤한 인덱스 선택
             int randomIndex = Random.Range(0, allowedYPositions.Length);
@@ -55,7 +65,7 @@ public class ZombieSpawner : MonoBehaviour
 
             // 좀비 프리팹을 생성 위치에 생성
             Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
-
+            zombieCount -= 1;
             // 다음 생성 대기
             yield return new WaitForSeconds(spawnInterval);
         }
