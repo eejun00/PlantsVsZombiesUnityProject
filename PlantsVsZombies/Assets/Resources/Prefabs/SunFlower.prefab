@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
+  sunPrefab: {fileID: 5183037171393142166, guid: 3a07721e0b7443c419537a19ba7f5038, type: 3}
 --- !u!114 &-3458490581992796806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +375,10 @@ PrefabInstance:
     - target: {fileID: -582987831301937227, guid: 6a500963004f74e4eb20f541e4dc925f, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: -0.035980403
+      objectReference: {fileID: 0}
+    - target: {fileID: -552156184123804470, guid: 6a500963004f74e4eb20f541e4dc925f, type: 3}
+      propertyPath: m_Name
+      value: Head
       objectReference: {fileID: 0}
     - target: {fileID: 137257019891567417, guid: 6a500963004f74e4eb20f541e4dc925f, type: 3}
       propertyPath: m_Bounds.m_Center.x
