@@ -8,7 +8,12 @@ public class Zombies : MonoBehaviour
     private float maxHP;                     // 최대 체력
     private float currentHP;                 // 현재 체력
     private bool isDie = false;              // 적이 사망 상태이면 isDie를 true로 설정
-    public int zombieAD = 1;             // 좀비의 공격 데미지 양
+    public float zombieAD = 1f;             // 좀비의 공격 데미지 양
+    private bool isMeetPlant = false;
+    public float moveSpeed = 2f; // 좀비 이동 속도
+    public float attackSpeed = 1f; // 좀비 공격 속도
+    private float attackAfter = default; //좀비가 공격하고난 후 흐른 시간
+    private Plant plant; // 좀비가 마주친 식물을 받아올 변수
 
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
@@ -16,6 +21,43 @@ public class Zombies : MonoBehaviour
     private void Awake()
     {
         currentHP = maxHP;   //현재 체력을 최대 체력과 같게 설정
+    }
+
+    private void Start()
+    {
+        attackAfter = 0f;
+    }
+
+    private void Update()
+    {
+        if(isMeetPlant == true)
+        {
+            if(plant != null)
+            {
+                attackAfter += Time.deltaTime;
+                if (attackAfter > attackSpeed)
+                {
+                    plant.TakeDamage(zombieAD); // 데미지 입히기
+                    attackAfter = 0f;
+                }
+            }
+        }
+        else
+        {
+            // 좀비를 왼쪽으로 이동시킴
+            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+
+            // 좀비가 왼쪽으로 벗어났을 때 제거
+            if (transform.position.x < -10.3f)
+            {
+                Destroy(gameObject);
+            }
+        }       
+        
+        if(isDie == true)
+        {
+            Die();
+        }
     }
 
     public void TakeDamage(float damage)
@@ -47,12 +89,20 @@ public class Zombies : MonoBehaviour
     {
         if (other.CompareTag("Plant"))
         {
-            Plant plant = other.GetComponent<Plant>(); // 충돌한 오브젝트의 Plant 컴포넌트 가져오기
-
+            plant = other.GetComponent<Plant>(); // 충돌한 오브젝트의 Plant 컴포넌트 가져오기
             if (plant != null)
             {
-                plant.TakeDamage(zombieAD); // 데미지 입히기
+                isMeetPlant = true;                
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag.Equals("Plant"))
+        {
+            isMeetPlant = false;
+            plant = null;
         }
     }
 }

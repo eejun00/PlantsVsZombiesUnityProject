@@ -17,6 +17,14 @@ public class Wallnut : Plant
     // Update is called once per frame
     void Update()
     {
-        
+        if(currentHP < 50f)
+        {
+            fullHpImg.SetActive(false);
+            if(currentHP < 25f)
+            {
+                halfHpImg.SetActive(false);
+            }
+        }
+
     }
 }

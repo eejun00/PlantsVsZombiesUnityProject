@@ -6,7 +6,6 @@ public class PeaShooter : Plant
 {
     public GameObject bulletPrefab;
 
-    private float maxHp = 5f;
     private float attackSpeed = 2f;
     private float shootAfter = default;
     private Transform firePoint;

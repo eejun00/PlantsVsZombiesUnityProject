@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: -4571655909715876721}
   - component: {fileID: 8871504179854572054}
   - component: {fileID: -3458490581992796806}
+  - component: {fileID: -5623164270678917101}
   m_Layer: 0
   m_Name: SunFlower
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
+  maxHP: 6
+  currentHP: 0
   sunPrefab: {fileID: 5183037171393142166, guid: 3a07721e0b7443c419537a19ba7f5038, type: 3}
 --- !u!114 &-3458490581992796806
 MonoBehaviour:
@@ -113,6 +116,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c620eca2af6cb4ba8a9e0bdd53b280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &-5623164270678917101
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058102251100259419}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.4, y: 1}
+  m_Size: {x: 0.6, y: 0.1}
+  m_Direction: 1
 --- !u!1001 &7533139962203593488
 PrefabInstance:
   m_ObjectHideFlags: 0

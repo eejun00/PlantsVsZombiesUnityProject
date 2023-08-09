@@ -334,9 +334,10 @@ GameObject:
   - component: {fileID: 6788107306153951138}
   - component: {fileID: 6788107306153951136}
   - component: {fileID: 4698401806545819161}
+  - component: {fileID: -525627419420860773}
   m_Layer: 0
   m_Name: Wallnut
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,6 +447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
+  maxHP: 75
+  currentHP: 0
 --- !u!114 &4698401806545819161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +461,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c620eca2af6cb4ba8a9e0bdd53b280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &-525627419420860773
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6472794710761053397}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.4, y: 0.7}
+  m_Size: {x: 0.5, y: 0.2}
+  m_Direction: 1
 --- !u!1 &6587108050058771470
 GameObject:
   m_ObjectHideFlags: 0

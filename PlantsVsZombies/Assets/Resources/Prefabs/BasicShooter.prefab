@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -8085617009527777652}
   - component: {fileID: -8328059870087282021}
   - component: {fileID: 1185938419507659927}
+  - component: {fileID: -6599791116147672406}
   m_Layer: 0
   m_Name: BasicShooter
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +70,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4c8ad2f1465ee4ba1f2c3fb0b2c95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 100
+  cost: 1
+  maxHP: 6
+  currentHP: 6
   bulletPrefab: {fileID: 8385509859700308808, guid: e83c8593bf841f24787b68e390a01ca0, type: 3}
 --- !u!212 &-8328059870087282021
 SpriteRenderer:
@@ -135,6 +138,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c620eca2af6cb4ba8a9e0bdd53b280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &-6599791116147672406
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721666860928240625}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.6, y: 0.1}
+  m_Direction: 1
 --- !u!1001 &1166502772136865055
 PrefabInstance:
   m_ObjectHideFlags: 0

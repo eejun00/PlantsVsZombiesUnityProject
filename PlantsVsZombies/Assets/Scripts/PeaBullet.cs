@@ -7,6 +7,7 @@ public class PeaBullet : MonoBehaviour
 {
     private float bulletSpeed = 6f; // 총알 이동 속도
     public int bulletDamage = 1;
+    private Zombies zombies;    // 데미지를 받을 좀비 저장 변수
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,12 @@ public class PeaBullet : MonoBehaviour
     {
         if(collision.tag.Equals("Zombie"))
         {
-            //데미지 입히는 내용
-            Destroy(gameObject);
+            zombies = collision.GetComponent<Zombies>();
+            if(zombies != null)
+            {
+                zombies.TakeDamage(bulletDamage);
+                Destroy(gameObject);
+            }
         }
     }
 }

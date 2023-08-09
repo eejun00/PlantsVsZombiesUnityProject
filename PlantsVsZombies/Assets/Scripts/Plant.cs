@@ -6,7 +6,7 @@ public class Plant : MonoBehaviour
 {
     public int cost = 50;
     public float maxHP;                     // 최대 체력
-    private float currentHP;                 // 현재 체력
+    public float currentHP;                 // 현재 체력
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
     private void Awake()
@@ -17,7 +17,7 @@ public class Plant : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHP -= damage; // 데미지만큼 체력 감소
 
