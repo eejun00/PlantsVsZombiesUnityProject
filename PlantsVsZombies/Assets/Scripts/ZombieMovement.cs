@@ -12,7 +12,7 @@ public class ZombieMovement : MonoBehaviour
         transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
 
         // 좀비가 왼쪽으로 벗어났을 때 제거
-        if (transform.position.x < -10f)
+        if (transform.position.x < -10.3f)
         {
             Destroy(gameObject);
         }
