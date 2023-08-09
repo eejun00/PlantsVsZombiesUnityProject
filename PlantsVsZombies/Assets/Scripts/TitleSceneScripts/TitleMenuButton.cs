@@ -33,4 +33,9 @@ public class TitleMenuButton : MonoBehaviour
     {
         //물어보거나 바로 게임 종료하는 코드
     }
+
+    public void OnClickMainMenuButton()
+    {
+        GFunc.LoadScene("TitleSceneLJY");
+    }
 }
