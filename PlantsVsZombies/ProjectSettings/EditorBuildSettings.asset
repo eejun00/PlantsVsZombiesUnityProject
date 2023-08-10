@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleSceneLJY.unity
     guid: d0e6a404aaf116947831ad58ef8ab480
+  - enabled: 1
+    path: Assets/Scenes/LJYScene New.unity
+    guid: 26e4ea40a7dfed84da66d3f0e08188eb
+  - enabled: 1
+    path: Assets/Scenes/Stage1-1Scene.unity
+    guid: bd9cae8fd4fc42143ac48d2e1638d19e
+  - enabled: 1
+    path: Assets/Scenes/Stage1-2Scene.unity
+    guid: f7eddd1c82763eb458d926bb9b88307b
+  - enabled: 1
+    path: Assets/Scenes/Stage1-3Scene.unity
+    guid: 6acb5a0542bede94c9d81be630e781dd
   m_configObjects: {}

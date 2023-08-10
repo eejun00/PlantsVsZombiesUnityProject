@@ -594,8 +594,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 292023060}
         m_TargetAssemblyTypeName: NextStageBtn, Assembly-CSharp
-        m_MethodName: OnClickNextStageBtn
-        m_Mode: 3
+        m_MethodName: OnClickNextStageOneBtn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -683,7 +683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b95f631e7cb138489ea500df0c6d73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageNum: 1
+  stageOneNum: 1
+  isStageOneEnd: 0
   isGameover: 0
   stagePlaying: 0
   isStageClear: 0
@@ -2904,7 +2905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1350511162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4334,12 +4335,10 @@ MonoBehaviour:
   zombiePrefab: {fileID: 8578070260908374827, guid: d4eb6e81eb6bb9b4997cb26aae12aac0, type: 3}
   spawnInterval: 5
   allowedYPositions:
-  - 2
   - 0.5
   - -1.3
   - -2.7
-  - -4.4
-  zombieCount: 5
+  zombieCount: 4
 --- !u!4 &1966778921
 Transform:
   m_ObjectHideFlags: 0

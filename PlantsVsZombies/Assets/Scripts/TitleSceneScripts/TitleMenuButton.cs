@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class TitleMenuButton : MonoBehaviour
 {
-    public void OnClickStage1Button()
+    public void OnClickStage1Button(int stageNum)
     {
-        GFunc.LoadScene("Stage1Scene");
+        if(stageNum == 0 || stageNum == 1)
+        {
+            GFunc.LoadScene("Stage1-1Scene");
+        }
+        else if(stageNum == 2)
+        {
+            GFunc.LoadScene("Stage1-2Scene");
+        }
+        else if(stageNum == 3)
+        {
+            GFunc.LoadScene("Stage1-3Scene");
+        }
     }
 
     public void OnClickStage2Button()

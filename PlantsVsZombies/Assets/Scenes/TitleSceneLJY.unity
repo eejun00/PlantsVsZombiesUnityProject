@@ -1944,7 +1944,7 @@ MonoBehaviour:
       - m_Target: {fileID: 785642361}
         m_TargetAssemblyTypeName: TitleMenuButton, Assembly-CSharp
         m_MethodName: OnClickStage1Button
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
