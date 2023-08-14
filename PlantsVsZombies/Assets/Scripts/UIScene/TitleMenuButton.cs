@@ -6,6 +6,10 @@ public class TitleMenuButton : MonoBehaviour
 {
     public void OnClickStage1Button(int stageNum)
     {
+        if(GameManager.instance.stageOneNum >= 1)
+        {
+            stageNum = GameManager.instance.stageOneNum;
+        }
         if(stageNum == 0 || stageNum == 1)
         {
             GFunc.LoadScene("Stage1-1Scene");
@@ -49,4 +53,5 @@ public class TitleMenuButton : MonoBehaviour
     {
         GFunc.LoadScene("TitleSceneLJY");
     }
+
 }

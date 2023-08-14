@@ -12,7 +12,7 @@ public class SunSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTime = 5f;
+        spawnTime = 0f;
         posY = 4f;
     }
 

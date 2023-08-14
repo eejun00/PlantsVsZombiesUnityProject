@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 22
   zombieAD: 1
-  moveSpeed: 1
+  moveSpeed: 0.5
   attackSpeed: 1
 --- !u!1 &5008202697850897574
 GameObject:

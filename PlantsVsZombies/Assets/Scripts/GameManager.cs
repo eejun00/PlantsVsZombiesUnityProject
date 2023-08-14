@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool isGameover = false;   // 게임 오버 확인 변수
     public bool stagePlaying = false; // 스테이지를 진행하고 있는지에 대한 변수
     public bool isStageClear = false; // 스테이지를 클리어했는지 확인해주는 변수
+    public bool isWave = false;       // 웨이브가 시작됬는지 확인하는 변수
     public int zombieDeathCount = default;
 
     public int cost = default; // 햇빛 코스트 변수
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
     public float fadeDuration = 2f;
 
     
-    private Color originalColor;
+    private Color originalColor = default;
     private Color transparentColor;
 
     private void Awake()
@@ -50,9 +51,7 @@ public class GameManager : MonoBehaviour
         costText = uiCanvas.FindChildComponent<TMP_Text>("CostText");
         gameClearUi = uiCanvas.FindChildObject("GameClearUi");
         clearImg = uiCanvas.FindChildComponent<Image>("EffectImg");
-        cost = 50; //초기 코스트 50설정
-        originalColor = clearImg.color;
-        transparentColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+        AddCost(100); //초기 코스트 100설정        
     }
 
     // Update is called once per frame
@@ -61,6 +60,8 @@ public class GameManager : MonoBehaviour
         if(isStageClear && isGameover == false && zombieDeathCount <= 0)
         {
             OnClearUi();
+            isStageClear = false;
+            stagePlaying = false;
         }
     }
 
@@ -72,8 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void OnClearUi()
     {
-        gameClearUi.SetActive(true);
-        isStageClear = false;
+        gameClearUi.SetActive(true);       
         StartCoroutine(FadeOutUI());
     }
 
@@ -91,7 +91,6 @@ public class GameManager : MonoBehaviour
 
         clearImg.color = transparentColor; // 완전한 투명 상태로 설정
         clearImg.gameObject.SetActive(false);
-        clearImg.color = originalColor;
 
         yield return null;
     }
@@ -116,22 +115,40 @@ public class GameManager : MonoBehaviour
 
     private void FindAndProcessObjectsInScene(Scene scene)
     {
-        // 씬에서 원하는 오브젝트를 찾아와서 처리하는 코드를 작성
-        uiCanvas = GFunc.GetRootObject("UiCanvas");
-        gameoverUi = uiCanvas.FindChildObject("GameOverUi");
-        costText = uiCanvas.FindChildComponent<TMP_Text>("CostText");
-        gameClearUi = uiCanvas.FindChildObject("GameClearUi");
-        clearImg = uiCanvas.FindChildComponent<Image>("EffectImg");
 
-        if(scene.name == "TitleSceneLJY")
+        if (scene.name == "TitleSceneLJY")
         {
+            uiCanvas = GFunc.GetRootObject("UiCanvas");
             Button stageOneBtn = uiCanvas.FindChildComponent<Button>("Stage1Button");
             TMP_Text stageOnetext = uiCanvas.FindChildComponent<TMP_Text>("Stage1");
             stageOnetext.text = string.Format("{0}", stageOneNum);
-            if(isStageOneEnd)
+            if (isStageOneEnd)
             {
                 stageOneBtn.enabled = false;
             }
+        }
+        else if (scene.name == "EndingScene")
+        {
+
+        }
+        else
+        {
+            // 씬에서 원하는 오브젝트를 찾아와서 처리하는 코드를 작성
+            uiCanvas = GFunc.GetRootObject("UiCanvas");
+            gameoverUi = uiCanvas.FindChildObject("GameOverUi");
+            costText = uiCanvas.FindChildComponent<TMP_Text>("CostText");
+            gameClearUi = uiCanvas.FindChildObject("GameClearUi");
+            clearImg = uiCanvas.FindChildComponent<Image>("EffectImg");
+            if(originalColor == default)
+            {
+                originalColor = clearImg.color;
+                Debug.Log(clearImg.color);
+            }
+            else
+            {
+                clearImg.color = originalColor;
+            }
+            transparentColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
         }
     }
 

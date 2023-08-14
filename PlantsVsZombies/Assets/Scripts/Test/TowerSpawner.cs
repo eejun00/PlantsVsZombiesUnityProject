@@ -52,6 +52,8 @@ public class TowerSpawner : MonoBehaviour
         isOnTowerButton = true;
         // 마우스를 따라나니는 임시 타워 생성
         followTowerClone = Instantiate(plantPrefab);
+        Collider2D cloneCollider = followTowerClone.GetComponent<Collider2D>();
+        cloneCollider.enabled = false;
         PlantPrefab = plantPrefab;
         // 타워 건설을 취소할 수 있는 코루틴 함수 시작
         StartCoroutine("OnTowerCancelSystem");

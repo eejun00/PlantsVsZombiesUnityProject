@@ -6,7 +6,7 @@ using UnityEngine;
 public class PeaBullet : MonoBehaviour
 {
     private float bulletSpeed = 6f; // 총알 이동 속도
-    public int bulletDamage = 1;
+    public float bulletDamage = 1f;
     private Zombies zombies;    // 데미지를 받을 좀비 저장 변수
 
     // Start is called before the first frame update
