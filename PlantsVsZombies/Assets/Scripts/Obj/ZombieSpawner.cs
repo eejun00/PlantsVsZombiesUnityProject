@@ -1,10 +1,16 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
 {
     public GameObject zombiePrefab; // 좀비 프리팹
     public GameObject flagZombiePrefab; // 깃발 좀비 프리팹
+
+    //아래의 두개의 리스트는 순서와 갯수가 맞아야함
+    public GameObject[] otherZombieList;
+    public int[] otherZombieCount;
+    
     public float spawnInterval = 5f; // 좀비 생성 간격
     public float[] allowedYPositions; // 좀비 생성 허용 y좌표 배열
     public int zombieCount = 5;

@@ -6,7 +6,7 @@ public class Zombies : MonoBehaviour
 {
     [SerializeField]
     private float maxHP;                     // 최대 체력
-    private float currentHP;                 // 현재 체력
+    public float currentHP;                 // 현재 체력
     private bool isDie = false;              // 적이 사망 상태이면 isDie를 true로 설정
     public float zombieAD = 1f;             // 좀비의 공격 데미지 양
     private bool isMeetPlant = false;

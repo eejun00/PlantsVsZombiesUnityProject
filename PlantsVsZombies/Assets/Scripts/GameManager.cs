@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        clearImg.color = transparentColor; // 완전한 투명 상태로 설정
+        //clearImg.color = transparentColor; // 완전한 투명 상태로 설정
         clearImg.gameObject.SetActive(false);
 
         yield return null;
