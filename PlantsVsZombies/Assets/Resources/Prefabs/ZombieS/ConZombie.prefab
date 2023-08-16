@@ -96,7 +96,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4968996281121074051}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 59.24}
 --- !u!212 &1385429856308163176
 SpriteRenderer:
@@ -2069,9 +2069,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7378964424528137557}
   - {fileID: 766498680791251924}
   - {fileID: 7100374517542294874}
-  - {fileID: 7378964424528137557}
   m_Father: {fileID: 6795444696142448944}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2477,7 +2477,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4968996281121074051}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7433723413953241737
 SpriteRenderer:
@@ -2704,7 +2704,7 @@ GameObject:
   - component: {fileID: 1165522916497106271}
   - component: {fileID: 406967585444852228}
   - component: {fileID: 9007527006232609526}
-  - component: {fileID: 4177969482769258023}
+  - component: {fileID: -3105532229666663722}
   m_Layer: 0
   m_Name: ConZombie
   m_TagString: Zombie
@@ -2786,7 +2786,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &4177969482769258023
+--- !u!114 &-3105532229666663722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2795,14 +2795,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7485832820614298974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 725112e910b447643a753af461431f8a, type: 3}
+  m_Script: {fileID: 11500000, guid: a88d4d077da07944b9db65646b470f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 22
+  maxHP: 52
   currentHP: 0
   zombieAD: 1
   moveSpeed: 0.5
   attackSpeed: 1
+  fullcon: {fileID: 1041015323846073664}
+  halfcon: {fileID: 7244073007629452241}
+  quatercon: {fileID: 8566776846506900647}
 --- !u!1 &8566776846506900647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,7 +2837,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4968996281121074051}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3418500824463342889
 SpriteRenderer:
