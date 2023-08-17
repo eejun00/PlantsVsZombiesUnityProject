@@ -2763,7 +2763,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.4, y: 1.2}
-  m_Size: {x: 0.8, y: 2.2}
+  m_Size: {x: 0.8, y: 1.5}
   m_Direction: 0
 --- !u!50 &9007527006232609526
 Rigidbody2D:
@@ -2801,8 +2801,9 @@ MonoBehaviour:
   maxHP: 52
   currentHP: 0
   zombieAD: 1
-  moveSpeed: 0.5
+  moveSpeed: 0.4
   attackSpeed: 1
+  isMeetMower: 0
   fullcon: {fileID: 1041015323846073664}
   halfcon: {fileID: 7244073007629452241}
   quatercon: {fileID: 8566776846506900647}

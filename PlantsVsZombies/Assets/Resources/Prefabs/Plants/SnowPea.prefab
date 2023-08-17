@@ -322,6 +322,7 @@ MonoBehaviour:
   cost: 175
   maxHP: 10
   currentHP: 0
+  coolTime: 5
   bulletPrefab: {fileID: 8385509859700308808, guid: 40e407bf84aebb54ba3a08474ffece57, type: 3}
 --- !u!114 &6769016543945161882
 MonoBehaviour:

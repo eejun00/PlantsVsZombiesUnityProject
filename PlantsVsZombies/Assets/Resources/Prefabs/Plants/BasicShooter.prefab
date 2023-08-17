@@ -73,6 +73,7 @@ MonoBehaviour:
   cost: 1
   maxHP: 6
   currentHP: 6
+  coolTime: 5
   bulletPrefab: {fileID: 8385509859700308808, guid: e83c8593bf841f24787b68e390a01ca0, type: 3}
 --- !u!212 &-8328059870087282021
 SpriteRenderer:
@@ -123,7 +124,7 @@ SpriteRenderer:
   m_Size: {x: 4.63, y: 3.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1185938419507659927

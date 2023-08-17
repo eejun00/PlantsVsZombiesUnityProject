@@ -449,6 +449,7 @@ MonoBehaviour:
   cost: 50
   maxHP: 75
   currentHP: 0
+  coolTime: 5
 --- !u!114 &4698401806545819161
 MonoBehaviour:
   m_ObjectHideFlags: 0

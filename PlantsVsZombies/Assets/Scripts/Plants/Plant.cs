@@ -7,6 +7,7 @@ public class Plant : MonoBehaviour
     public int cost = 50;
     public float maxHP;                     // 최대 체력
     public float currentHP;                 // 현재 체력
+    public float coolTime = 5f;
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
     private void Awake()

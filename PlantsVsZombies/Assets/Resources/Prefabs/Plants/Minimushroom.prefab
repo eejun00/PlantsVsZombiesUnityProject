@@ -234,5 +234,6 @@ MonoBehaviour:
   cost: 25
   maxHP: 6
   currentHP: 0
+  coolTime: 5
   smallSunPrefab: {fileID: 3969533837692220561, guid: 8f38e0dd9551446488f2862ce852ef03, type: 3}
   sunPrefab: {fileID: 5183037171393142166, guid: 3a07721e0b7443c419537a19ba7f5038, type: 3}
