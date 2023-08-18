@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9167545647539002890, guid: 7d0c5bb1542286b40b7fa97057baabc9, type: 3}
+      propertyPath: m_Name
+      value: Body
+      objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 7d0c5bb1542286b40b7fa97057baabc9, type: 3}
       propertyPath: m_Name
       value: mower
@@ -70,6 +74,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 7d0c5bb1542286b40b7fa97057baabc9, type: 3}
   m_PrefabInstance: {fileID: 3412226756941605176}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &4316247794408987817
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2935614647237658757}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2, y: 0.4}
+  m_Size: {x: 0.5, y: 0.1}
+  m_Direction: 1
 --- !u!95 &-1796434795319435425
 Animator:
   serializedVersion: 5
@@ -91,3 +111,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2448030675969391046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2935614647237658757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb8d5d7afa618b4a88c5d6d3a42d8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

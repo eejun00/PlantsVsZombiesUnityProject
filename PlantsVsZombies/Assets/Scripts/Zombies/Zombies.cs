@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,8 +16,10 @@ public class Zombies : MonoBehaviour
     private float attackAfter = default; //좀비가 공격하고난 후 흐른 시간
     private Plant plant; // 좀비가 마주친 식물을 받아올 변수
 
+    public bool isMeetMower = false;
     private bool isSlowed = false;          // 슬로우에 걸렸는지 확인하기
-    private Color newColor = new Color(0.474f, 0.651f, 1f); // 79A6FF, 변경할 색상
+    private Color slowColor = new Color(0.474f, 0.651f, 1f); // 79A6FF, 변경할 색상
+    private Color currentColor;
 
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
@@ -57,9 +60,41 @@ public class Zombies : MonoBehaviour
             }
         }
 
+        if(isMeetMower)
+        {
+            DownScaleZombie();
+            if(transform.localScale.y <= 0f)
+            {
+                isDie = true;
+            }
+        }
+
         if (isDie == true)
         {
             Die();
+        }
+    }
+
+    private void DownScaleZombie()
+    {
+        StartCoroutine(ScaleDownAndDestroy());
+    }
+
+    IEnumerator ScaleDownAndDestroy()
+    {
+        while (transform.localScale.y > 0)
+        {
+            Vector3 newScale = transform.localScale;
+            newScale.y -= 0.05f * Time.deltaTime;
+            newScale.y = Mathf.Max(newScale.y, 0f); // 스케일이 음수가 되지 않도록 보정
+            transform.localScale = newScale;
+
+            yield return null;
+        }
+
+        if(transform.localScale.y <= 0f)
+        {
+            yield break;
         }
     }
 
@@ -70,6 +105,19 @@ public class Zombies : MonoBehaviour
 
         // 현재 적의 상태가 사망 상태이면 아래 코드를 실행하지 않는다.
         if (isDie == true) return;
+        
+        if(isSlowed == true)
+        {
+            currentColor = slowColor;
+        }
+        else
+        {
+            currentColor = new Color(1f, 1f, 1f, 1f);
+        }
+
+        ChangeColorsRecursively(transform, new Color(currentColor.r, currentColor.g, currentColor.b, 0.5f));
+        ChangeColorsDoColor(transform);
+
 
         // 현재 체력을 damage 만큼 감소 
         currentHP -= damage;
@@ -92,12 +140,12 @@ public class Zombies : MonoBehaviour
         else
         {
             isSlowed = true;
-            ChangeColorsRecursively(transform);
+            ChangeColorsRecursively(transform,slowColor);
             moveSpeed = moveSpeed * 0.6f;
             attackSpeed = attackSpeed * 1.2f;
         }
     }
-    private void Die()
+    public void Die()
     {
         // 좀비가 사망할 때의 처리, 예를 들어 사망 애니메이션 재생 등을 수행할 수 있음
         Destroy(gameObject); // 일단 오브젝트 파괴로 처리
@@ -126,18 +174,33 @@ public class Zombies : MonoBehaviour
     }
 
 
-    private void ChangeColorsRecursively(Transform parent)
+    private void ChangeColorsRecursively(Transform parent,Color color_)
     {
         foreach (Transform child in parent)
         {
             SpriteRenderer spriteRenderer = child.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
-                spriteRenderer.color = newColor;
+                spriteRenderer.color = color_;
             }
 
             // 자식 오브젝트에 대해 재귀적으로 실행
-            ChangeColorsRecursively(child);
+            ChangeColorsRecursively(child, color_);
+        }
+    }
+
+    private void ChangeColorsDoColor(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            SpriteRenderer spriteRenderer = child.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.DOColor(new Color(currentColor.r, currentColor.g, currentColor.b, 1f), 0.3f);
+            }
+
+            // 자식 오브젝트에 대해 재귀적으로 실행
+            ChangeColorsDoColor(child);
         }
     }
 

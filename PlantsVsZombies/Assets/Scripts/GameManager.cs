@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -73,26 +74,9 @@ public class GameManager : MonoBehaviour
 
     public void OnClearUi()
     {
-        gameClearUi.SetActive(true);       
-        StartCoroutine(FadeOutUI());
-    }
-
-    private IEnumerator FadeOutUI()
-    {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            float t = elapsedTime / fadeDuration;
-            clearImg.color = Color.Lerp(originalColor, transparentColor, t);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        //clearImg.color = transparentColor; // 완전한 투명 상태로 설정
-        clearImg.gameObject.SetActive(false);
-
-        yield return null;
+        gameClearUi.SetActive(true);
+        clearImg.DOColor(Color.clear, 2.0f);
+        
     }
 
     private void OnEnable()
@@ -120,11 +104,18 @@ public class GameManager : MonoBehaviour
         {
             uiCanvas = GFunc.GetRootObject("UiCanvas");
             Button stageOneBtn = uiCanvas.FindChildComponent<Button>("Stage1Button");
-            TMP_Text stageOnetext = uiCanvas.FindChildComponent<TMP_Text>("Stage1");
-            stageOnetext.text = string.Format("{0}", stageOneNum);
+            TMP_Text stageOnetext = uiCanvas.FindChildComponent<TMP_Text>("Stage1");           
+            
             if (isStageOneEnd)
             {
                 stageOneBtn.enabled = false;
+                Image btnImg = stageOneBtn.GetComponent<Image>();
+                btnImg.DOColor(new Color(0.4f,0.4f,0.4f), 2f);
+                stageOnetext.text = string.Format("5");
+            }
+            else
+            {
+                stageOnetext.text = string.Format("{0}", stageOneNum);
             }
         }
         else if (scene.name == "EndingScene")
