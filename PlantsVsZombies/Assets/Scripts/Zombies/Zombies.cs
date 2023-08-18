@@ -15,11 +15,13 @@ public class Zombies : MonoBehaviour
     public float attackSpeed = 1f; // 좀비 공격 속도
     private float attackAfter = default; //좀비가 공격하고난 후 흐른 시간
     private Plant plant; // 좀비가 마주친 식물을 받아올 변수
+    private Animator animator;
 
     public bool isMeetMower = false;
     private bool isSlowed = false;          // 슬로우에 걸렸는지 확인하기
     private Color slowColor = new Color(0.474f, 0.651f, 1f); // 79A6FF, 변경할 색상
     private Color currentColor;
+
 
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
@@ -30,7 +32,8 @@ public class Zombies : MonoBehaviour
     }
 
     private void Start()
-    {        
+    {   
+        animator = GetComponent<Animator>();    
         attackAfter = 0f;
     }
 
@@ -67,7 +70,7 @@ public class Zombies : MonoBehaviour
             {
                 isDie = true;
             }
-        }
+        }   // if: 예초기와 만났을 경우
 
         if (isDie == true)
         {
@@ -75,6 +78,7 @@ public class Zombies : MonoBehaviour
         }
     }
 
+    // 예초기에 닿았을 경우 실행하기 위한 함수
     private void DownScaleZombie()
     {
         StartCoroutine(ScaleDownAndDestroy());
@@ -115,6 +119,7 @@ public class Zombies : MonoBehaviour
             currentColor = new Color(1f, 1f, 1f, 1f);
         }
 
+        // 피격 이펙트를 보여주기 위한 색상 변경
         ChangeColorsRecursively(transform, new Color(currentColor.r, currentColor.g, currentColor.b, 0.5f));
         ChangeColorsDoColor(transform);
 
@@ -131,12 +136,13 @@ public class Zombies : MonoBehaviour
         }
     }
 
+    // 좀비가 슬로우에 걸렸을 경우 실행하는 함수
     public void TakeSlow()
     {
         if (isSlowed == true)
         {
             return;
-        }
+        }   // if: 이미 슬로우에 걸렸을 경우 리턴
         else
         {
             isSlowed = true;
@@ -159,6 +165,7 @@ public class Zombies : MonoBehaviour
             plant = other.GetComponent<Plant>(); // 충돌한 오브젝트의 Plant 컴포넌트 가져오기
             if (plant != null)
             {
+                animator.SetTrigger("Attack");
                 isMeetPlant = true;
             }
         }
@@ -168,12 +175,13 @@ public class Zombies : MonoBehaviour
     {
         if (collision.tag.Equals("Plant"))
         {
+            animator.SetTrigger("End");
             isMeetPlant = false;
             plant = null;
         }
     }
 
-
+    // 받아온 컬러로 모든 자식오브젝트의 컬러를 변경한다.
     private void ChangeColorsRecursively(Transform parent,Color color_)
     {
         foreach (Transform child in parent)
@@ -189,6 +197,7 @@ public class Zombies : MonoBehaviour
         }
     }
 
+    // 피격 시 알파값 변경을 위해 사용하는 자식오브젝트들 컬러 변경 함수
     private void ChangeColorsDoColor(Transform parent)
     {
         foreach (Transform child in parent)

@@ -55,6 +55,7 @@ public class SeedCard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 카드 쿨타임 구현 내용
         if(isSeedCoolTime)
         {
             seedCoolTimeObj.SetActive(true);
@@ -77,12 +78,12 @@ public class SeedCard : MonoBehaviour
     public void OnClickButton()
     {
         
-        if (!isSeedCoolTime && GameManager.instance.cost > cost && GameManager.instance.stagePlaying == true)
+        if (!isSeedCoolTime && GameManager.instance.cost >= cost && GameManager.instance.stagePlaying == true)
         {           
-            towerSpawnerScript.ReadyToSpawnTower(seedPrefab);
+            towerSpawnerScript.ReadyToSpawnTower(seedPrefab);   // TowerSpawner에서 처리
             isSeedCoolTime = true;
-        }   // if: 스테이지를 진행중이라면
-        else
+        }   // if: 카드에 들어있는 식물을 소환할 수 있는 조건들을 충족한 경우
+        else if(GameManager.instance.isSelectSeed == true)
         {
 
         }   // else if : 식물 선택화면이라면

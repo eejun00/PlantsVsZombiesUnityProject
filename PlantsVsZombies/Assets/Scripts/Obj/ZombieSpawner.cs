@@ -36,6 +36,7 @@ public class ZombieSpawner : MonoBehaviour
             coroutineFlag = true;
             StartCoroutine(SpawnZombieRoutine());
         }
+
         if (waveCount <= 0 && GameManager.instance.isStageClear == false)
         {
             GameManager.instance.isWave = false;

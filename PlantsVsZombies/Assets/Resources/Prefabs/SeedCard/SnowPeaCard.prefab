@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1385515188041307075}
   - component: {fileID: 5917223026914237541}
   - component: {fileID: 4517693982835530979}
+  - component: {fileID: -4120325878774615703}
   m_Layer: 0
   m_Name: SnowPeaCard
   m_TagString: Untagged
@@ -226,6 +227,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seedPrefab: {fileID: 2525315898920096640, guid: a5c0744d99e5e434a9bbc7856eeaad65, type: 3}
+--- !u!114 &-4120325878774615703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442840747132168654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ccd7e62fd3a9a459cab4b031137ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSlotManager: {fileID: 0}
 --- !u!1 &7615301042844223718
 GameObject:
   m_ObjectHideFlags: 0

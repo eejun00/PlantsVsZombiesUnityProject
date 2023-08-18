@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    public int cost = 50;
+    //프리팹에서 세부 변경할 내용들
+    public int cost = 50;                   // 기본 코스트
     public float maxHP;                     // 최대 체력
     public float currentHP;                 // 현재 체력
-    public float coolTime = 5f;
+    public float coolTime = 5f;             // 기본 쿨타임
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
     private void Awake()
+    {
+        currentHP = maxHP; // 게임 시작 시 현재 체력을 최대 체력으로 초기화
+    }
+
+    private void Start()
     {
         currentHP = maxHP; // 게임 시작 시 현재 체력을 최대 체력으로 초기화
     }

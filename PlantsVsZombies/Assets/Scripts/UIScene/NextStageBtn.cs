@@ -34,7 +34,18 @@ public class NextStageBtn : MonoBehaviour
         else if(stageNum == 5)
         {
             GameManager.instance.isStageOneEnd = true;
-            GFunc.LoadScene("EndingScene");           
+            GameManager.instance.PassStage();
+            GFunc.LoadScene("TitleSceneLJY");           
+        }
+        else if(stageNum == 6)
+        {
+            GameManager.instance.PassStage();
+            GFunc.LoadScene("Stage2-2Scene");
+        }
+        else if(stageNum == 7)
+        {
+            GameManager.instance.PassStage();
+            GFunc.LoadScene("Stage2-3Scene");
         }
     }
 }

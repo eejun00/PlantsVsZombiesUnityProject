@@ -26,9 +26,9 @@ public class SnowPeaBullet : MonoBehaviour
         {
             zombies = collision.GetComponent<Zombies>();
             if (zombies != null)
-            {
-                zombies.TakeDamage(bulletDamage);
+            {               
                 zombies.TakeSlow();
+                zombies.TakeDamage(bulletDamage);
                 Destroy(gameObject);
             }
         }

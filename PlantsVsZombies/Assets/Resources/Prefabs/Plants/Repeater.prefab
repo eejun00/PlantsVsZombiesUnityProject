@@ -42,6 +42,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Repeater
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: e04272d5ac04d804f9fa04cf26939be9, type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: e04272d5ac04d804f9fa04cf26939be9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -208,7 +212,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.4, y: 0.7}

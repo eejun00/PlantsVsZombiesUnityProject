@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool stagePlaying = false; // 스테이지를 진행하고 있는지에 대한 변수
     public bool isStageClear = false; // 스테이지를 클리어했는지 확인해주는 변수
     public bool isWave = false;       // 웨이브가 시작됬는지 확인하는 변수
+    public bool isSelectSeed = false; // 식물 선택화면인지 확인하는 변수
     public int zombieDeathCount = default;
 
     public int cost = default; // 햇빛 코스트 변수
@@ -53,6 +54,11 @@ public class GameManager : MonoBehaviour
         gameClearUi = uiCanvas.FindChildObject("GameClearUi");
         clearImg = uiCanvas.FindChildComponent<Image>("EffectImg");
         AddCost(100); //초기 코스트 100설정        
+
+        if(stageOneNum >= 7)
+        {
+            isSelectSeed = true;
+        }
     }
 
     // Update is called once per frame
@@ -77,6 +83,16 @@ public class GameManager : MonoBehaviour
         gameClearUi.SetActive(true);
         clearImg.DOColor(Color.clear, 2.0f);
         
+    }
+
+    public void LetsRock()
+    {
+        uiCanvas.FindChildObject("SeedChooser").SetActive(false);
+        //메인카메라 움직이기
+        Camera.main.transform.DOMoveX(-1.5f, 1.5f);
+        GFunc.GetRootObject("AfterStartObj").SetActive(true);
+        uiCanvas.FindChildObject("AfterStartUi").SetActive(true);
+        isSelectSeed = false;
     }
 
     private void OnEnable()
@@ -106,8 +122,9 @@ public class GameManager : MonoBehaviour
             Button stageOneBtn = uiCanvas.FindChildComponent<Button>("Stage1Button");
             TMP_Text stageOnetext = uiCanvas.FindChildComponent<TMP_Text>("Stage1");           
             
-            if (isStageOneEnd)
+            if (isStageOneEnd || stageOneNum >= 5)
             {
+                isStageOneEnd = true;
                 stageOneBtn.enabled = false;
                 Image btnImg = stageOneBtn.GetComponent<Image>();
                 btnImg.DOColor(new Color(0.4f,0.4f,0.4f), 2f);
@@ -140,6 +157,14 @@ public class GameManager : MonoBehaviour
                 clearImg.color = originalColor;
             }
             transparentColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+
+            if(stageOneNum >= 7)
+            {
+                // 식물 선택화면이 존재하는 스테이지부터 오브젝트들 꺼놓기
+                GFunc.GetRootObject("AfeterStartObj").SetActive(false);
+                uiCanvas.FindChildObject("AfterStartUi").SetActive(false);
+                isSelectSeed = true;
+            }
         }
     }
 

@@ -26,13 +26,13 @@ public class StageGauge : MonoBehaviour
             if (currentTime < delayBeforeFill)
             {
                 currentTime += Time.deltaTime;
-            }
+            }   // if: 채워지기 전 딜레이 시간이 지나지 않은 경우
             else
             {
                 hasStartedFilling = true;
                 fillImageObj.SetActive(true);
                 currentTime = 0.0f;
-            }
+            }   // else: 딜레이 시간이 모두 지난경우
         }
         else if (currentTime < fillDuration)
         {

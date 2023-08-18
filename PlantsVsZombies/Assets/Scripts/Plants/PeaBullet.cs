@@ -31,6 +31,6 @@ public class PeaBullet : MonoBehaviour
                 zombies.TakeDamage(bulletDamage);
                 Destroy(gameObject);
             }
-        }
+        }   // if: 총알 콜라이더가 좀비에 닿았을 경우
     }
 }

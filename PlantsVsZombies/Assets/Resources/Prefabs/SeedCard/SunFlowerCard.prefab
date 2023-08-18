@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 232493776502116745}
   - component: {fileID: 8138649952417598017}
   - component: {fileID: 3004483804947937084}
+  - component: {fileID: 8203723395892384416}
   m_Layer: 0
   m_Name: SunFlowerCard
   m_TagString: Untagged
@@ -361,6 +362,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seedPrefab: {fileID: 7058102251100259419, guid: 112cda62ff02e5f488401d6ec9db96a7, type: 3}
+--- !u!114 &8203723395892384416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966641794769905030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ccd7e62fd3a9a459cab4b031137ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSlotManager: {fileID: 0}
 --- !u!1 &6463747398086401892
 GameObject:
   m_ObjectHideFlags: 0

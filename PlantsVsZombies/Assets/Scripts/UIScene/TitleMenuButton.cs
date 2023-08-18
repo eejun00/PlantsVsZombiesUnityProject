@@ -22,11 +22,29 @@ public class TitleMenuButton : MonoBehaviour
         {
             GFunc.LoadScene("Stage1-3Scene");
         }
+        else if(stageNum == 4)
+        {
+            GFunc.LoadScene("Stage1-4Scene");
+        }
+        else if (stageNum == 5)
+        {
+            GFunc.LoadScene("Stage1-5Scene");
+        }
     }
 
     public void OnClickStage2Button()
     {
-        GFunc.LoadScene("Stage2Scene");
+        if (GameManager.instance.isStageOneEnd)
+        {
+            if (GameManager.instance.stageOneNum == 5 || GameManager.instance.stageOneNum == 6)
+            {
+                GFunc.LoadScene("Stage2-1Scene");
+            }
+            if (GameManager.instance.stageOneNum == 7)
+            {
+                GFunc.LoadScene("Stage2-2Scene");
+            }
+        }
     }
 
     public void OnClickStage3Button()

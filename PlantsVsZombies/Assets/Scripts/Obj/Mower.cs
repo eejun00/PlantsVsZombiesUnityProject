@@ -24,7 +24,7 @@ public class Mower : MonoBehaviour
             animator.enabled = true;
             transform.Translate(Vector2.right * Time.deltaTime * 6.0f);
             Destroy(gameObject, 5.0f);
-        }
+        }   // if: 예초기에 좀비가 닿았을 경우
     }
 
 
@@ -35,6 +35,6 @@ public class Mower : MonoBehaviour
             isMeetZombie = true;
             zombie = collision.GetComponent<Zombies>();
             zombie.isMeetMower = true;
-        }
+        }   // if: 예초기의 콜라이더에 좀비 태그의 콜라이더가 닿았을 경우
     }
 }
