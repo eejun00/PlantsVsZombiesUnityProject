@@ -846,6 +846,7 @@ MonoBehaviour:
   stagePlaying: 0
   isStageClear: 0
   isWave: 0
+  isSelectSeed: 0
   zombieDeathCount: 0
   cost: 0
   uiCanvas: {fileID: 0}

@@ -13,10 +13,13 @@ public class Zombies : MonoBehaviour
     private bool isMeetPlant = false;
     public float moveSpeed = 2f; // 좀비 이동 속도
     public float attackSpeed = 1f; // 좀비 공격 속도
+    private float beforeSpeed;
+    private float beforeAniSpeed;
     private float attackAfter = default; //좀비가 공격하고난 후 흐른 시간
     private Plant plant; // 좀비가 마주친 식물을 받아올 변수
     private Animator animator;
 
+    public bool isFreeze = false;       //빙결에 걸렸는지 확인하기
     public bool isMeetMower = false;
     private bool isSlowed = false;          // 슬로우에 걸렸는지 확인하기
     private Color slowColor = new Color(0.474f, 0.651f, 1f); // 79A6FF, 변경할 색상
@@ -70,7 +73,7 @@ public class Zombies : MonoBehaviour
             {
                 isDie = true;
             }
-        }   // if: 예초기와 만났을 경우
+        }   // if: 예초기와 만났을 경우 
 
         if(isSlowed == true)
         {
@@ -152,10 +155,34 @@ public class Zombies : MonoBehaviour
         {
             isSlowed = true;
             ChangeColorsRecursively(transform,slowColor);
+            animator.speed = 0.6f;
             moveSpeed = moveSpeed * 0.6f;
             attackSpeed = attackSpeed * 1.2f;
         }
     }
+
+    public void TakeFreeze()
+    {
+        if(isFreeze == true) { return; }
+        isFreeze = true;
+        beforeSpeed = moveSpeed;
+        beforeAniSpeed = animator.speed;
+        moveSpeed = 0f;
+        animator.speed = 0f;
+
+        StartCoroutine(Freezing());
+    }
+
+    private IEnumerator Freezing()
+    {
+        yield return new WaitForSeconds(3.0f);
+        moveSpeed = beforeSpeed;
+        animator.speed = beforeAniSpeed;
+        isFreeze = false;
+        Debug.Log("프리징 실행됨");
+        yield break;
+    }
+
     public void Die()
     {
         // 좀비가 사망할 때의 처리, 예를 들어 사망 애니메이션 재생 등을 수행할 수 있음
