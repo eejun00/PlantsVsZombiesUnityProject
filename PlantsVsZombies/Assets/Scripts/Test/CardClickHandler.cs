@@ -11,13 +11,16 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        // CardSlotManager의 스크립트 가져오기
-        cardSlotManager = GFunc.GetRootObject("CardSlotManager").GetComponent<SeedCardSelect>();
+        if(GFunc.GetRootObject("CardSlotManager") != null)
+        {
+            // CardSlotManager의 스크립트 가져오기
+            cardSlotManager = GFunc.GetRootObject("CardSlotManager").GetComponent<SeedCardSelect>();
+        }        
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (GameManager.instance.isSelectSeed == false) { return; }
+        if (GameManager.instance.isSelectSeed == false && GameManager.instance.stageOneNum <= 6) { return; }
         else
         {
             cardSlotManager.HandleCardClick(gameObject);
