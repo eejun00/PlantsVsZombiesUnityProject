@@ -19,8 +19,9 @@ public class Minimushroom : Plant
     private float maxIdleTime = 1f; // 1√ 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         sunSpawnPosition = gameObject.FindChildObject("Head").transform;
         sunSpawnPosition.position = new Vector3(sunSpawnPosition.position.x, sunSpawnPosition.position.y, 1f);
         lastPosition = transform.position;

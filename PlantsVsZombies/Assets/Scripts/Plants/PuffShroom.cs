@@ -20,8 +20,9 @@ public class PuffShroom : Plant
         currentHP = maxHP;
     }
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         shootAfter = 0f;
         lastPosition = transform.position;
     }

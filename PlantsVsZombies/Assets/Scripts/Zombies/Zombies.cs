@@ -72,6 +72,11 @@ public class Zombies : MonoBehaviour
             }
         }   // if: 예초기와 만났을 경우
 
+        if(isSlowed == true)
+        {
+            TakeSlow();
+        }
+
         if (isDie == true)
         {
             Die();

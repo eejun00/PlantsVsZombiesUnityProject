@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PeaShooter : Plant
+public class Thinshroom : Plant
 {
     public GameObject bulletPrefab;
 
-    private float attackSpeed = 2f;
+    private float attackSpeed = 1.5f;
     private float shootAfter = default;
     private Transform firePoint;
 
@@ -17,6 +17,7 @@ public class PeaShooter : Plant
     private void Awake()
     {
         firePoint = gameObject.FindChildObject("FirePoint").transform;
+        currentHP = maxHP;
     }
     // Start is called before the first frame update
     protected override void Start()

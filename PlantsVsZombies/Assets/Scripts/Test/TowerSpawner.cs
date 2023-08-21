@@ -85,7 +85,8 @@ public class TowerSpawner : MonoBehaviour
         //playerGold.CurrentGold -= towerTemplate[towerType].weapon[0].cost;
         // 선택한 타일의 위치에 타워 건설 (타일보다 z축 -1의 위치에 배치)
         Vector3 position = tileTransform.position;
-        GameObject clone = Instantiate(PlantPrefab, position, Quaternion.identity);        
+        GameObject clone = Instantiate(PlantPrefab, position, Quaternion.identity);
+        clone.transform.SetParent(tileTransform);
         followMousePosition = clone.GetComponent<ObjectFollowMousePosition>();
         GameManager.instance.AddCost(-plantingCost);
         if (followMousePosition != null)

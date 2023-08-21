@@ -8,8 +8,9 @@ public class Wallnut : Plant
     private GameObject halfHpImg;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         fullHpImg = gameObject.FindChildObject("FullHpWallnut");
         halfHpImg = gameObject.FindChildObject("HalfWallnut");
     }

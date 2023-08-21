@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755a05892540931438b0682f3e98d77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombiePrefab: {fileID: 8578070260908374827, guid: d4eb6e81eb6bb9b4997cb26aae12aac0, type: 3}
+  zombiePrefab: {fileID: 7372782953567871120, guid: 6d2164b869e0c3243aca4a929d6af61e, type: 3}
   flagZombiePrefab: {fileID: 5003131527117711250, guid: b29c2eee978fa6b4885fb84eef2f6c85, type: 3}
   otherZombieList: []
   otherZombieCount: 

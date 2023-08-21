@@ -11,7 +11,18 @@ public class Tile : MonoBehaviour
     {
         IsBuildTower = false;
     }
-    
+
+    private void Update()
+    {
+        if (IsBuildTower)
+        {
+            if(transform.childCount == 0)
+            {
+                IsBuildTower = false;
+            }
+        }
+    }
+
 }
 
 //타워 배치가 가능한 TileWall 오브젝트에 부착

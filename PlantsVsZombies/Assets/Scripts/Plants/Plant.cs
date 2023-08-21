@@ -13,10 +13,10 @@ public class Plant : MonoBehaviour
     public float CurrentHP => currentHP;
     private void Awake()
     {
-        currentHP = maxHP; // 게임 시작 시 현재 체력을 최대 체력으로 초기화
+        
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         currentHP = maxHP; // 게임 시작 시 현재 체력을 최대 체력으로 초기화
     }
