@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         costText = uiCanvas.FindChildComponent<TMP_Text>("CostText");
         gameClearUi = uiCanvas.FindChildObject("GameClearUi");
         clearImg = uiCanvas.FindChildComponent<Image>("EffectImg");
-        AddCost(100); //초기 코스트 100설정        
+        if (stageOneNum > 0) { AddCost(100); } //초기 코스트 100설정        
 
         if(stageOneNum >= 7)
         {
