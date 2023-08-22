@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 164392766}
   - component: {fileID: 164392769}
   m_Layer: 0
-  m_Name: Stage3Button
+  m_Name: StageSurvival
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -712,8 +712,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164392764}
-  m_LocalRotation: {x: 0.0451565, y: 0.0862019, z: -0.023363186, w: 0.9949795}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalRotation: {x: 0.047449846, y: 0.0849611, z: 0.0033030845, w: 0.9952483}
+  m_LocalPosition: {x: 0, y: 0, z: 4.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -721,11 +721,11 @@ RectTransform:
   - {fileID: 1380882956}
   m_Father: {fileID: 45950998}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 5.387, y: 9.798, z: -2.228}
+  m_LocalEulerAnglesHint: {x: 5.387, y: 9.798, z: 0.842}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.77, y: -0.74}
-  m_SizeDelta: {x: 2.5, y: 1.2}
+  m_AnchoredPosition: {x: 1.7629, y: -0.8057}
+  m_SizeDelta: {x: 2.5387, y: 1.2292}
   m_Pivot: {x: 0.753007, y: 0.18747048}
 --- !u!114 &164392766
 MonoBehaviour:
@@ -756,7 +756,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b19eecf72c55445459ecc3992cf74e3d, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 86598112294169446bfe28dabb9fd236, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -773,7 +773,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 164392769}
         m_TargetAssemblyTypeName: TitleMenuButton, Assembly-CSharp
-        m_MethodName: OnClickStage3Button
+        m_MethodName: OnClickStageSurvival
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 63bceaf5cd042b64595dcd54ad4bb15d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60d471e40c607f14d87119c00bc31194, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2739,7 +2739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -3104,7 +3104,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}

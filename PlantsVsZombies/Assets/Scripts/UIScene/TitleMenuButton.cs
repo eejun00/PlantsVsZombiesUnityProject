@@ -47,9 +47,9 @@ public class TitleMenuButton : MonoBehaviour
         }
     }
 
-    public void OnClickStage3Button()
+    public void OnClickStageSurvival()
     {
-        GFunc.LoadScene("Stage3Scene");
+        GFunc.LoadScene("StageSurvive");
     }
 
     public void OnClickOptionButton()
