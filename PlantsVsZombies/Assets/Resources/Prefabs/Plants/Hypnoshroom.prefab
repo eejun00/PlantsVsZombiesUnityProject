@@ -94,6 +94,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 35491f2d50d0a914d88203871fa0f076, type: 3}
   m_PrefabInstance: {fileID: 5254790329207576484}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &6545572370088589586
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695659525433849369}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_Size: {x: 0.7, y: 0.3}
+  m_Direction: 1
 --- !u!212 &7348324382253456472
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -156,7 +172,7 @@ Animator:
   m_GameObject: {fileID: 5695659525433849369}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af64d0077e9669d4fbe262951debcf79, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -167,3 +183,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5793046934336258716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695659525433849369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c620eca2af6cb4ba8a9e0bdd53b280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1942276776868952013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695659525433849369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fade2e3e6e211454ba96df896bc83865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 50
+  maxHP: 6
+  currentHP: 0
+  coolTime: 5
+  hypnoEffect: {fileID: 2418841065493397985, guid: 330fab52d4c672f4ca80b63197073d59, type: 3}

@@ -13,12 +13,13 @@ public class Zombies : MonoBehaviour
     private bool isMeetPlant = false;
     public float moveSpeed = 2f; // 좀비 이동 속도
     public float attackSpeed = 1f; // 좀비 공격 속도
-    private float beforeSpeed;
-    private float beforeAniSpeed;
+    protected float beforeSpeed;
+    protected float beforeAniSpeed;
     private float attackAfter = default; //좀비가 공격하고난 후 흐른 시간
-    private Plant plant; // 좀비가 마주친 식물을 받아올 변수
-    private Animator animator;
+    protected Plant plant; // 좀비가 마주친 식물을 받아올 변수
+    protected Animator animator;
 
+    public bool isMad = false;
     public bool isFreeze = false;       //빙결에 걸렸는지 확인하기
     public bool isMeetMower = false;
     private bool isSlowed = false;          // 슬로우에 걸렸는지 확인하기
@@ -66,7 +67,7 @@ public class Zombies : MonoBehaviour
             }
         }
         else if(transform.CompareTag("MadZombie"))
-        {
+        {           
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
 
             // 좀비가 왼쪽으로 벗어났을 때 제거
@@ -94,6 +95,16 @@ public class Zombies : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void TakeMad()
+    {
+        if (transform.CompareTag("MadZombie")) { return; }
+        isMad = true;
+        transform.tag = "MadZombie";
+        
+        transform.localScale = new Vector3 (-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        ChangeColorsRecursively(transform, new Color(1f, 0.65f, 1f));
     }
 
     // 예초기에 닿았을 경우 실행하기 위한 함수
@@ -254,5 +265,7 @@ public class Zombies : MonoBehaviour
             ChangeColorsDoColor(child);
         }
     }
+
+
 
 }

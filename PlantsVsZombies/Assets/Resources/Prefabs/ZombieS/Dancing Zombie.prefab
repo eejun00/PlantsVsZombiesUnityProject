@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dancing Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 416cecfd2c755ef478c11202f5bd9e59, type: 3}
+      propertyPath: m_TagString
+      value: Zombie
+      objectReference: {fileID: 0}
     - target: {fileID: -8286536509919306634, guid: 416cecfd2c755ef478c11202f5bd9e59, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: 0.000009775162
