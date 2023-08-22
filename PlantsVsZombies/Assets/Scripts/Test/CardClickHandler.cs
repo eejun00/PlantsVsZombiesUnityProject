@@ -20,7 +20,7 @@ public class CardClickHandler : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (GameManager.instance.isSelectSeed == false && GameManager.instance.stageOneNum <= 6) { return; }
+        if (GameManager.instance.isSelectSeed == false || GameManager.instance.stageOneNum <= 6) { return; }
         else
         {
             cardSlotManager.HandleCardClick(gameObject);
