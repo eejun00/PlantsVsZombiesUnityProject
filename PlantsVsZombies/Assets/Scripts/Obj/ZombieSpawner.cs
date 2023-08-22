@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
 {
-    public GameObject zombiePrefab; // 좀비 프리팹
-    public GameObject flagZombiePrefab; // 깃발 좀비 프리팹
+    public GameObject zombiePrefab;         // 좀비 프리팹
+    public GameObject flagZombiePrefab;     // 깃발 좀비 프리팹
+    public GameObject conZombieprefab;      // 콘 좀비 프리팹
+    public GameObject buketZombiePrefab;    // 버켓 좀비 프리팹
+    public GameObject dancingZombiePrefab;  // 댄싱 좀비 프리팹
+    public GameObject backupZombiePrefab;   // 백업 좀비 프리팹
 
     //아래의 두개의 리스트는 순서와 갯수가 맞아야함
     public GameObject[] otherZombieList;
