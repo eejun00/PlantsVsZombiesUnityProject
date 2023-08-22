@@ -42,7 +42,7 @@ public class Zombies : MonoBehaviour
 
     private void Update()
     {
-        if (isMeetPlant == true)
+        if (isMeetPlant == true && transform.CompareTag("Zombie"))
         {
             if (plant != null)
             {
@@ -54,7 +54,7 @@ public class Zombies : MonoBehaviour
                 }
             }
         }
-        else
+        else if(transform.CompareTag("Zombie"))
         {
             // ¡ª∫Ò∏¶ øﬁ¬ ¿∏∑Œ ¿ÃµøΩ√≈¥
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
@@ -63,6 +63,16 @@ public class Zombies : MonoBehaviour
             if (transform.position.x < -10.3f)
             {
                 Destroy(gameObject);
+            }
+        }
+        else if(transform.CompareTag("MadZombie"))
+        {
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+
+            // ¡ª∫Ò∞° øﬁ¬ ¿∏∑Œ π˛æÓ≥µ¿ª ∂ß ¡¶∞≈
+            if (transform.position.x > 7.5f)
+            {
+                Die();
             }
         }
 
