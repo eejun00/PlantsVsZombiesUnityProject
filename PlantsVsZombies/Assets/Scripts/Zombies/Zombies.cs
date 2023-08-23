@@ -22,7 +22,7 @@ public class Zombies : MonoBehaviour
     public bool isMad = false;
     public bool isFreeze = false;       //빙결에 걸렸는지 확인하기
     public bool isMeetMower = false;
-    private bool isSlowed = false;          // 슬로우에 걸렸는지 확인하기
+    protected bool isSlowed = false;          // 슬로우에 걸렸는지 확인하기
     private Color slowColor = new Color(0.474f, 0.651f, 1f); // 79A6FF, 변경할 색상
     private Color currentColor;
 
@@ -79,6 +79,7 @@ public class Zombies : MonoBehaviour
 
         if(isMeetMower)
         {
+            moveSpeed = 0f;
             DownScaleZombie();
             if(transform.localScale.y <= 0f)
             {

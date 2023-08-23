@@ -80,10 +80,18 @@ public class MenuManager : MonoBehaviour
 
     public void OnClickRestartButton()
     {
+        Time.timeScale = 1.0f; // 게임 시간을 정상 속도로 돌립니다.
         // 현재 씬의 인덱스를 가져옴
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         // 현재 씬을 다시 불러옴
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void OnClickTestBtn()
+    {
+        Time.timeScale = 4.0f; // 게임 시간을 정상 속도로 돌립니다.
+        isGamePaused = false;
+        menu.SetActive(false);
     }
 }

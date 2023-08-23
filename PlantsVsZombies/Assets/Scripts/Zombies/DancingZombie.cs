@@ -32,10 +32,11 @@ public class DancingZombie : Zombies
             spotlight.transform.position = transform.position;
         }
 
-        if(currentHP < 2)
-        {
-            Destroy(spotlight);
-        }
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(spotlight);
     }
 
     public void SpawnBackupZombie()
@@ -59,7 +60,10 @@ public class DancingZombie : Zombies
     {
         for(int i = 0; i < 4; i++)
         {
-            backupZombies[i].GetComponent<Animator>().SetBool("Standing", false);
+            if (backupZombies[i] != null)
+            {
+                backupZombies[i].GetComponent<Animator>().SetBool("Standing", false);
+            }
         }
         animator.SetTrigger("EndSpawnMotion");
         moveSpeed = beforeSpeed;
