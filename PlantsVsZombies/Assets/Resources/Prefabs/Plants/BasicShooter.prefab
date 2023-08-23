@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4c8ad2f1465ee4ba1f2c3fb0b2c95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
+  cost: 50
   maxHP: 6
   currentHP: 6
   coolTime: 5
