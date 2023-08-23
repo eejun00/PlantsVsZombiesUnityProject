@@ -33,7 +33,7 @@ public class Shovel : MonoBehaviour
         }
 
         // 마우스 우클릭 시 버튼 이미지를 원래 위치로 돌아가게 설정
-        if (Input.GetMouseButtonDown(1) && isButtonImageActive)
+        if ((Input.GetMouseButtonDown(1) && isButtonImageActive) || (Input.GetKeyDown(KeyCode.Escape) && isButtonImageActive))
         {
             buttonImage.rectTransform.position = originalPosition;
             isButtonImageActive = false;
