@@ -5,11 +5,13 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     public int stagenum = default;
+    public bool isSuvival = false;
     private void Start()
     {
-        if (GameManager.instance.isStageOneEnd == false)
+        if (!isSuvival)
         {
             GameManager.instance.stageOneNum = stagenum;
+
         }
     }
 }

@@ -6,7 +6,7 @@ public class SurviveMode : MonoBehaviour
 {
     public GameObject[] zombiePrefabs; // 좀비 프리팹들
     // 좀비 프리팹들의 생성 비율을 설정하는 가중치
-    public float[] zombieSpawnWeights = { 6f, 3f, 3f, 3f, 1f, 1f };
+    public float[] zombieSpawnWeights = { 6f, 3f, 3f, 3f, 1f,};
     public float initialSpawnInterval = 5f; // 초기 생성 간격
     public float minSpawnInterval = 2f; // 최소 생성 간격
     public float spawnIntervalDecreaseRate = 0.9f; // 생성 간격 감소 비율
@@ -58,7 +58,7 @@ public class SurviveMode : MonoBehaviour
             }
 
             waveCount += 1; // 웨이브 카운트 증가
-            GameManager.instance.isWave = true; // 웨이브 시작을 게임 매니저에 알림
+            //GameManager.instance.isWave = true; // 웨이브 시작을 게임 매니저에 알림
 
             yield return new WaitForSeconds(2.0f); // 웨이브 시작 후 2초 대기
 

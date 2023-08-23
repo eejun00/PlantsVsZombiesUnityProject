@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class Shovel : MonoBehaviour
 {
     private Image buttonImage; // 버튼 이미지
-    private Vector3 originalPosition; // 원래 위치 저장
     private bool isButtonImageActive = false; // 버튼 이미지가 활성화되어 있는지 확인하는 변수
+
+    private Transform shovelBankTransform; // ShovelBank 오브젝트의 Transform 컴포넌트
 
     private void Start()
     {
         buttonImage = GetComponent<Image>();
-        originalPosition = buttonImage.rectTransform.position;
+        shovelBankTransform = transform.parent; // 삽 이미지의 부모 오브젝트를 ShovelBank로 설정
     }
 
     private void Update()
@@ -21,6 +22,14 @@ public class Shovel : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isButtonImageActive)
         {
             RemovePlant();
+
+        }
+
+        // 아무 키나 입력하면 버튼 이미지를 ShovelBank의 위치로 돌아가게 함
+        if (isButtonImageActive && Input.anyKeyDown)
+        {
+            buttonImage.rectTransform.position = shovelBankTransform.position; // 아무 키나 입력하면 삽 이미지가 ShovelBank 위치로 돌아가게 함
+            isButtonImageActive = false;
         }
 
         // 버튼 이미지를 마우스 위치에 따라 이동
@@ -30,13 +39,6 @@ public class Shovel : MonoBehaviour
             mousePos.z = 0f;
 
             buttonImage.rectTransform.position = mousePos;
-        }
-
-        // 마우스 우클릭 시 버튼 이미지를 원래 위치로 돌아가게 설정
-        if (Input.GetMouseButtonDown(1) && isButtonImageActive)
-        {
-            buttonImage.rectTransform.position = originalPosition;
-            isButtonImageActive = false;
         }
     }
 
@@ -52,9 +54,6 @@ public class Shovel : MonoBehaviour
 
     private void RemovePlant()
     {
-        Debug.Log("RemoveObjectsInTile() called."); // 함수가 호출되었는지 확인용 메시지 출력
-
-
         // 마우스 위치에서 Ray를 발사하여 충돌하는 오브젝트를 찾음
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
