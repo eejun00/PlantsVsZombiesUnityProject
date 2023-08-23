@@ -65,6 +65,8 @@ public class TitleMenuButton : MonoBehaviour
     public void OnClickQuitButton()
     {
         //물어보거나 바로 게임 종료하는 코드
+        Debug.Log("Quitting the game...");
+        Application.Quit();
     }
 
     public void OnClickMainMenuButton()
