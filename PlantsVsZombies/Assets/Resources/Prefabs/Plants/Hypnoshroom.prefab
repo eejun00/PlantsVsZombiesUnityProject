@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fade2e3e6e211454ba96df896bc83865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 50
+  cost: 75
   maxHP: 6
   currentHP: 0
-  coolTime: 5
+  coolTime: 8
   hypnoEffect: {fileID: 2418841065493397985, guid: 330fab52d4c672f4ca80b63197073d59, type: 3}

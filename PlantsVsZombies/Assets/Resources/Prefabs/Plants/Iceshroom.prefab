@@ -381,10 +381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9354a806e56844c85debca837632cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 50
+  cost: 75
   maxHP: 6
   currentHP: 0
-  coolTime: 5
+  coolTime: 8
   effectObj: {fileID: 678941869465200168}
 --- !u!114 &7130327790770361981
 MonoBehaviour:

@@ -14,18 +14,19 @@ public class ZombieSpawner : MonoBehaviour
     //아래의 두개의 리스트는 순서와 갯수가 맞아야함
     public GameObject[] otherZombieList;
     public int[] otherZombieCount;
-    
+
     public float spawnInterval = 5f; // 좀비 생성 간격
     public float[] allowedYPositions; // 좀비 생성 허용 y좌표 배열
     public int zombieCount = 5;
     public int waveCount = 3;
 
+    private bool isSpawnBoss = false;
     private bool coroutineFlag = false;
 
 
     private void Start()
     {
-        if(GameManager.instance.stageOneNum < 3)
+        if (GameManager.instance.stageOneNum < 3)
         {
             waveCount = 0;
         }
@@ -43,6 +44,22 @@ public class ZombieSpawner : MonoBehaviour
 
         if (waveCount <= 0 && GameManager.instance.isStageClear == false)
         {
+            if (GameManager.instance.stageOneNum == 5)
+            {
+                if (!isSpawnBoss)
+                {
+                    GameManager.instance.zombieDeathCount += 1;
+                    isSpawnBoss = true;
+                    GameObject stageOneBoss = Instantiate(backupZombiePrefab,
+                        new Vector3(transform.position.x, -4.6f, transform.position.z), Quaternion.identity);
+                    stageOneBoss.GetComponent<BackupZombie>().currentHP = 200f;
+                    stageOneBoss.GetComponent<BackupZombie>().zombieAD = 50f;
+                    stageOneBoss.GetComponent<BackupZombie>().attackSpeed = 2f;
+                    stageOneBoss.GetComponent<BackupZombie>().moveSpeed = 2f;
+                    stageOneBoss.transform.localScale = stageOneBoss.transform.localScale * 4f;
+                    stageOneBoss.GetComponent<Animator>().SetBool("Standing", false);
+                }
+            }
             GameManager.instance.isWave = false;
             GameManager.instance.isStageClear = true;
         }
@@ -69,7 +86,7 @@ public class ZombieSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
 
-        
+
         if (waveCount > 0)
         {
             yield return new WaitForSeconds(2.0f);

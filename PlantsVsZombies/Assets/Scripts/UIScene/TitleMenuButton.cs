@@ -76,5 +76,4 @@ public class TitleMenuButton : MonoBehaviour
         GameManager.instance.stageOneNum += 1;
         GFunc.LoadScene("TitleSceneLJY");
     }
-
 }

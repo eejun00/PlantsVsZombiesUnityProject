@@ -348,7 +348,7 @@ MonoBehaviour:
   readyMsg: {fileID: 3143192769763638056}
   setMsg: {fileID: 3143192769897660666}
   startMsg: {fileID: 3143192769739453044}
-  finalWaveMsg: {fileID: 0}
+  finalWaveMsg: {fileID: 7693100172543367710}
 --- !u!1 &7693100172543367710
 GameObject:
   m_ObjectHideFlags: 0
