@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public Image clearImg;
     public float fadeDuration = 2f;
 
-    
+
     private Color originalColor = default;
     private Color transparentColor;
 
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         clearImg = uiCanvas.FindChildComponent<Image>("EffectImg");
         if (stageOneNum > 0 && costText != null) { AddCost(100); } //초기 코스트 100설정        
 
-        if(stageOneNum >= 7)
+        if (stageOneNum >= 7)
         {
             isSelectSeed = true;
         }
@@ -64,11 +64,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isStageClear && isGameover == false && zombieDeathCount <= 0)
+        if (gameClearUi != null)
         {
-            OnClearUi();
-            isStageClear = false;
-            stagePlaying = false;
+            if (isStageClear && isGameover == false && zombieDeathCount <= 0)
+            {
+                OnClearUi();
+                isStageClear = false;
+                stagePlaying = false;
+            }
         }
     }
 
@@ -82,7 +85,7 @@ public class GameManager : MonoBehaviour
     {
         gameClearUi.SetActive(true);
         clearImg.DOColor(Color.clear, 2.0f);
-        
+
     }
 
     public void LetsRock()
@@ -120,14 +123,14 @@ public class GameManager : MonoBehaviour
         {
             uiCanvas = GFunc.GetRootObject("UiCanvas");
             Button stageOneBtn = uiCanvas.FindChildComponent<Button>("Stage1Button");
-            TMP_Text stageOnetext = uiCanvas.FindChildComponent<TMP_Text>("Stage1");           
-            
-            if (isStageOneEnd || stageOneNum >= 5)
+            TMP_Text stageOnetext = uiCanvas.FindChildComponent<TMP_Text>("Stage1");
+
+            if (isStageOneEnd || stageOneNum > 5)
             {
                 isStageOneEnd = true;
                 stageOneBtn.enabled = false;
                 Image btnImg = stageOneBtn.GetComponent<Image>();
-                btnImg.DOColor(new Color(0.4f,0.4f,0.4f), 2f);
+                btnImg.DOColor(new Color(0.4f, 0.4f, 0.4f), 2f);
                 stageOnetext.text = string.Format("5");
             }
             else
@@ -139,6 +142,28 @@ public class GameManager : MonoBehaviour
         {
 
         }
+        else if (scene.name == "StageSurvive")
+        {
+            // 씬에서 원하는 오브젝트를 찾아와서 처리하는 코드를 작성
+            uiCanvas = GFunc.GetRootObject("UiCanvas");
+            gameoverUi = uiCanvas.FindChildObject("GameOverUi");
+            costText = uiCanvas.FindChildComponent<TMP_Text>("CostText");
+            gameClearUi = uiCanvas.FindChildObject("GameClearUi");
+            clearImg = uiCanvas.FindChildComponent<Image>("EffectImg");
+            cost = 0;
+            AddCost(100);
+            if (originalColor == default)
+            {
+                originalColor = clearImg.color;
+                Debug.Log(clearImg.color);
+            }
+            else
+            {
+                clearImg.color = originalColor;
+            }
+            transparentColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+            isSelectSeed = true;
+        }
         else
         {
             // 씬에서 원하는 오브젝트를 찾아와서 처리하는 코드를 작성
@@ -147,8 +172,9 @@ public class GameManager : MonoBehaviour
             costText = uiCanvas.FindChildComponent<TMP_Text>("CostText");
             gameClearUi = uiCanvas.FindChildObject("GameClearUi");
             clearImg = uiCanvas.FindChildComponent<Image>("EffectImg");
+            cost = 0;
             AddCost(100);
-            if(originalColor == default)
+            if (originalColor == default)
             {
                 originalColor = clearImg.color;
                 Debug.Log(clearImg.color);
@@ -159,11 +185,11 @@ public class GameManager : MonoBehaviour
             }
             transparentColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
 
-            if(stageOneNum >= 7)
+            if (stageOneNum >= 7)
             {
                 // 식물 선택화면이 존재하는 스테이지부터 오브젝트들 꺼놓기
-                GFunc.GetRootObject("AfeterStartObj").SetActive(false);
-                uiCanvas.FindChildObject("AfterStartUi").SetActive(false);
+                //GFunc.GetRootObject("AfeterStartObj").SetActive(false);
+                //uiCanvas.FindChildObject("AfterStartUi").SetActive(false);
                 isSelectSeed = true;
             }
         }
