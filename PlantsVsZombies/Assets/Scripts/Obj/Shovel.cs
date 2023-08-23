@@ -5,25 +5,34 @@ using UnityEngine.UI;
 
 public class Shovel : MonoBehaviour
 {
-    private Image buttonImage; // ¹öÆ° ÀÌ¹ÌÁö
-    private Vector3 originalPosition; // ¿ø·¡ À§Ä¡ ÀúÀå
-    private bool isButtonImageActive = false; // ¹öÆ° ÀÌ¹ÌÁö°¡ È°¼ºÈ­µÇ¾î ÀÖ´ÂÁö È®ÀÎÇÏ´Â º¯¼ö
+    private Image buttonImage; // ï¿½ï¿½Æ° ï¿½Ì¹ï¿½ï¿½ï¿½
+    private bool isButtonImageActive = false; // ï¿½ï¿½Æ° ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+    private Transform shovelBankTransform; // ShovelBank ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transform ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 
     private void Start()
     {
         buttonImage = GetComponent<Image>();
-        originalPosition = buttonImage.rectTransform.position;
+        shovelBankTransform = transform.parent; // ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ShovelBankï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     private void Update()
     {
-        // ¸¶¿ì½º ÁÂÅ¬¸¯ ½Ã ½Ä¹° Á¦°Å
+        // ï¿½ï¿½ï¿½ì½º ï¿½ï¿½Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½Ä¹ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (Input.GetMouseButtonDown(0) && isButtonImageActive)
         {
             RemovePlant();
+
         }
 
-        // ¹öÆ° ÀÌ¹ÌÁö¸¦ ¸¶¿ì½º À§Ä¡¿¡ µû¶ó ÀÌµ¿
+        // ï¿½Æ¹ï¿½ Å°ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½Æ° ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ShovelBankï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ ï¿½ï¿½
+        if (isButtonImageActive && Input.anyKeyDown)
+        {
+            buttonImage.rectTransform.position = shovelBankTransform.position; // ï¿½Æ¹ï¿½ Å°ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ShovelBank ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ ï¿½ï¿½
+            isButtonImageActive = false;
+        }
+
+        // ï¿½ï¿½Æ° ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
         if (isButtonImageActive)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -31,18 +40,11 @@ public class Shovel : MonoBehaviour
 
             buttonImage.rectTransform.position = mousePos;
         }
-
-        // ¸¶¿ì½º ¿ìÅ¬¸¯ ½Ã ¹öÆ° ÀÌ¹ÌÁö¸¦ ¿ø·¡ À§Ä¡·Î µ¹¾Æ°¡°Ô ¼³Á¤
-        if ((Input.GetMouseButtonDown(1) && isButtonImageActive) || (Input.GetKeyDown(KeyCode.Escape) && isButtonImageActive))
-        {
-            buttonImage.rectTransform.position = originalPosition;
-            isButtonImageActive = false;
-        }
     }
 
     public void OnButtonClick()
     {
-        // ¹öÆ° ÀÌ¹ÌÁö È°¼ºÈ­ ¹× À§Ä¡ ¼³Á¤
+        // ï¿½ï¿½Æ° ï¿½Ì¹ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
 
@@ -52,17 +54,14 @@ public class Shovel : MonoBehaviour
 
     private void RemovePlant()
     {
-        Debug.Log("RemoveObjectsInTile() called."); // ÇÔ¼ö°¡ È£ÃâµÇ¾ú´ÂÁö È®ÀÎ¿ë ¸Þ½ÃÁö Ãâ·Â
-
-
-        // ¸¶¿ì½º À§Ä¡¿¡¼­ Ray¸¦ ¹ß»çÇÏ¿© Ãæµ¹ÇÏ´Â ¿ÀºêÁ§Æ®¸¦ Ã£À½
+        // ï¿½ï¿½ï¿½ì½º ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ Rayï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï¿ï¿½ ï¿½æµ¹ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Ã£ï¿½ï¿½
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-        // Ray¿¡ Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®°¡ ÀÖ°í ±× ¿ÀºêÁ§Æ®ÀÇ ÅÂ±×°¡ "Tile"ÀÎ °æ¿ì
+        // Rayï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Â±×°ï¿½ "Tile"ï¿½ï¿½ ï¿½ï¿½ï¿½
         if (hit.collider != null && hit.collider.CompareTag("Tile"))
         {
-            // ÇØ´ç ¿ÀºêÁ§Æ®ÀÇ ¸ðµç ÀÚ½Ä ¿ÀºêÁ§Æ® ÆÄ±«
+            // ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ä±ï¿½
             foreach (Transform child in hit.collider.transform)
             {
                 Destroy(child.gameObject);

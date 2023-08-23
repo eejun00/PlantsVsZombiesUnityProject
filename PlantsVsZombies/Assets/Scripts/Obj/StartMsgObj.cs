@@ -32,7 +32,7 @@ public class StartMsgObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.isWave == true && !waveMsgFlag)
+        if (GameManager.instance.isWave == true && !waveMsgFlag)        
         {
             StartCoroutine(ShowWaveMsg());
             waveMsgFlag = true;

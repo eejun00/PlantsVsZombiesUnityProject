@@ -265,7 +265,4 @@ public class Zombies : MonoBehaviour
             ChangeColorsDoColor(child);
         }
     }
-
-
-
 }
