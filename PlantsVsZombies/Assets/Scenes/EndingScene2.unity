@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1582b139b30b2cb48965d86b9392d23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vibrato: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +731,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef99ba0bc170bd4ab35725354a088f8, type: 3}
+--- !u!1 &1188513709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -9057035157136070664, guid: b8c2775226940224bbe55bbace538e7e, type: 3}
+  m_PrefabInstance: {fileID: 1684087921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1188513711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188513709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1582b139b30b2cb48965d86b9392d23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrato: 10
 --- !u!1 &1244447916
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1582b139b30b2cb48965d86b9392d23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vibrato: 1
 --- !u!114 &1244447918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,6 +1075,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52e4e8c14e822474381a7a11a3f2fcfb, type: 3}
+--- !u!1 &1585710529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3296904214302867592, guid: b8c2775226940224bbe55bbace538e7e, type: 3}
+  m_PrefabInstance: {fileID: 1684087921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1585710531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585710529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1582b139b30b2cb48965d86b9392d23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrato: 10
 --- !u!1001 &1672179020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1852,6 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1582b139b30b2cb48965d86b9392d23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vibrato: 1
 --- !u!114 &2137130427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3860,6 +3899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1582b139b30b2cb48965d86b9392d23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vibrato: 1
 --- !u!114 &6788107306890900680
 MonoBehaviour:
   m_ObjectHideFlags: 0
