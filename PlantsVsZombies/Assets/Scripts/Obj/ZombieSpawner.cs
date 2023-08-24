@@ -12,7 +12,7 @@ public class ZombieSpawner : MonoBehaviour
     public GameObject backupZombiePrefab;   // 백업 좀비 프리팹
 
     //아래의 두개의 리스트는 순서와 갯수가 맞아야함
-    public GameObject[] otherZombieList;
+    public GameObject[] otherZombieList;    // 0:기본 1:콘 2:버켓 3:디스코
     public int[] otherZombieCount;
 
     public float spawnInterval = 5f; // 좀비 생성 간격
@@ -42,7 +42,7 @@ public class ZombieSpawner : MonoBehaviour
             StartCoroutine(SpawnZombieRoutine());
         }
 
-        if (waveCount <= 0 && GameManager.instance.isStageClear == false)
+        if (waveCount <= 0 && GameManager.instance.isStageClear == false && GameManager.instance.stagePlaying)
         {
             if (GameManager.instance.stageOneNum == 5)
             {
@@ -57,6 +57,18 @@ public class ZombieSpawner : MonoBehaviour
                     stageOneBoss.GetComponent<BackupZombie>().attackSpeed = 2f;
                     stageOneBoss.transform.localScale = stageOneBoss.transform.localScale * 3f;
                     stageOneBoss.GetComponent<Animator>().SetBool("Standing", false);
+                }
+            }
+            if (GameManager.instance.stageOneNum == 10)
+            {
+                if (!isSpawnBoss)
+                {
+                    GameManager.instance.zombieDeathCount += 2;
+                    isSpawnBoss = true;
+                    GameObject stageTwoBoss = Instantiate(otherZombieList[3],
+                        new Vector3(transform.position.x, 0.5f, transform.position.z), Quaternion.identity);
+                    GameObject stageTwoBoss_ = Instantiate(otherZombieList[3],
+                        new Vector3(transform.position.x, -2.7f, transform.position.z), Quaternion.identity);
                 }
             }
             GameManager.instance.isWave = false;
@@ -78,9 +90,9 @@ public class ZombieSpawner : MonoBehaviour
             // 좀비 생성 위치 설정
             Vector3 spawnPosition = new Vector3(transform.position.x, spawnYPosition, transform.position.z);
 
-            // 좀비 프리팹을 생성 위치에 생성
-            Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
-            zombieCount -= 1;
+            // 좀비 생성
+            SpawnZombie(spawnPosition);
+
             // 다음 생성 대기
             yield return new WaitForSeconds(spawnInterval);
         }
@@ -111,12 +123,40 @@ public class ZombieSpawner : MonoBehaviour
                 // 좀비 생성 위치 설정
                 Vector3 spawnPosition = new Vector3(transform.position.x, spawnYPosition, transform.position.z);
 
-                // 좀비 프리팹을 생성 위치에 생성
-                Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+                // 좀비 생성
+                SpawnZombie(spawnPosition);
                 waveCount -= 1;
                 // 다음 생성 대기
                 yield return new WaitForSeconds(2.0f);
             }
+        }
+    }
+
+    private void SpawnZombie(Vector3 spawnPosition)
+    {
+        if (GameManager.instance.stageOneNum < 4)
+        {
+            // 좀비 프리팹을 생성 위치에 생성
+            Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+            zombieCount -= 1;
+        }
+        else if (GameManager.instance.stageOneNum < 5)
+        {
+            int randomIdx = Random.Range(0, 3);
+            Instantiate(otherZombieList[randomIdx], spawnPosition, Quaternion.identity);
+            zombieCount -= 1;
+        }
+        else if (GameManager.instance.stageOneNum < 7)
+        {
+            int randomIdx = Random.Range(0, 4);
+            Instantiate(otherZombieList[randomIdx], spawnPosition, Quaternion.identity);
+            zombieCount -= 1;
+        }
+        else
+        {
+            int randomIdx = Random.Range(0, 5);
+            Instantiate(otherZombieList[randomIdx], spawnPosition, Quaternion.identity);
+            zombieCount -= 1;
         }
     }
 }
