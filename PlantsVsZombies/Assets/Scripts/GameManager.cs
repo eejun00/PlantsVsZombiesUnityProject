@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public int stageOneNum = 1;
     public bool isStageOneEnd = false;
+    public bool isStageTwoEnd = false;
     public bool isGameover = false;   // 게임 오버 확인 변수
     public bool stagePlaying = false; // 스테이지를 진행하고 있는지에 대한 변수
     public bool isStageClear = false; // 스테이지를 클리어했는지 확인해주는 변수
@@ -126,8 +127,19 @@ public class GameManager : MonoBehaviour
             TMP_Text stageOnetext = uiCanvas.FindChildComponent<TMP_Text>("Stage1");
             Button stageTowBtn = uiCanvas.FindChildComponent<Button>("Stage2Button");
             TMP_Text stageTwotext = uiCanvas.FindChildComponent<TMP_Text>("Stage2");
-
-            if (isStageOneEnd || stageOneNum > 5)
+            
+            if(isStageTwoEnd || stageOneNum > 10)
+            {
+                isStageOneEnd = true;
+                stageOneBtn.enabled = false;
+                Image btnImg = stageOneBtn.GetComponent<Image>();
+                btnImg.DOColor(new Color(0.4f, 0.4f, 0.4f), 2f);
+                Image btnImgTwo = stageOneBtn.GetComponent<Image>();
+                btnImgTwo.DOColor(new Color(0.4f, 0.4f, 0.4f), 2f);
+                stageOnetext.text = string.Format("5");
+                stageTwotext.text = string.Format("5");
+            }
+            else if (isStageOneEnd || stageOneNum > 5)
             {
                 isStageOneEnd = true;
                 stageOneBtn.enabled = false;
