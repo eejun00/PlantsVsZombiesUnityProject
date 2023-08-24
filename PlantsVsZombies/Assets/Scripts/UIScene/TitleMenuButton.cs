@@ -44,6 +44,18 @@ public class TitleMenuButton : MonoBehaviour
             {
                 GFunc.LoadScene("Stage2-2Scene");
             }
+            if (GameManager.instance.stageOneNum == 8)
+            {
+                GFunc.LoadScene("Stage2-3Scene");
+            }
+            if (GameManager.instance.stageOneNum == 9)
+            {
+                GFunc.LoadScene("Stage2-4Scene");
+            }   
+            if (GameManager.instance.stageOneNum == 10)
+            {
+                GFunc.LoadScene("Stage2-5Scene");
+            }
         }
     }
 
