@@ -49,11 +49,21 @@ public class DancingZombie : Zombies
         for (int i = 0; i < 4; i++)
         {
             backupZombies[i] = Instantiate(backupZombiePrefab, backupZombiePositions[i], Quaternion.identity);
+            GameManager.instance.zombieDeathCount += 1;
             backupZombies[i].transform.localScale =
                 new Vector3(backupZombies[i].transform.localScale.x, 0f, backupZombies[i].transform.localScale.z);
             backupZombies[i].transform.DOScaleY(1.05f, 0.5f);
         }
-        
+
+        if(transform.position.y < -4f)
+        {
+            backupZombies[3].GetComponent<Zombies>().Die();
+        }
+        else if(transform.position.y > 1.8)
+        {
+            backupZombies[2].GetComponent<Zombies>().Die();
+        }
+
     }
 
     public void EndSpawnBackupZombie()

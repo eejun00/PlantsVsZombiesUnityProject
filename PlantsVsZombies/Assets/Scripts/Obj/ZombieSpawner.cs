@@ -51,12 +51,11 @@ public class ZombieSpawner : MonoBehaviour
                     GameManager.instance.zombieDeathCount += 1;
                     isSpawnBoss = true;
                     GameObject stageOneBoss = Instantiate(backupZombiePrefab,
-                        new Vector3(transform.position.x, -4.6f, transform.position.z), Quaternion.identity);
+                        new Vector3(transform.position.x, -4f, transform.position.z), Quaternion.identity);
                     stageOneBoss.GetComponent<BackupZombie>().currentHP = 200f;
                     stageOneBoss.GetComponent<BackupZombie>().zombieAD = 50f;
                     stageOneBoss.GetComponent<BackupZombie>().attackSpeed = 2f;
-                    stageOneBoss.GetComponent<BackupZombie>().moveSpeed = 2f;
-                    stageOneBoss.transform.localScale = stageOneBoss.transform.localScale * 4f;
+                    stageOneBoss.transform.localScale = stageOneBoss.transform.localScale * 3f;
                     stageOneBoss.GetComponent<Animator>().SetBool("Standing", false);
                 }
             }

@@ -64,6 +64,7 @@ public class MenuManager : MonoBehaviour
     }
     public void OnClickMainMenu()
     {
+        Time.timeScale = 1.0f; // 게임 시간을 정상 속도로 돌립니다.
         GFunc.LoadScene("TitleSceneLJY");
     }
     private void PauseGame()
