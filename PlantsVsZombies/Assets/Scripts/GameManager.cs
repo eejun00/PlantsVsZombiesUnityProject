@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
                 stageOnetext.text = string.Format("{0}", stageOneNum);
             }
         }
-        else if (scene.name == "EndingScene")
+        else if (scene.name == "EndingScene" || scene.name == "EndingScene2")
         {
 
         }

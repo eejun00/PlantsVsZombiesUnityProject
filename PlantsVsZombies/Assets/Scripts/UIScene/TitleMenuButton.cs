@@ -71,6 +71,7 @@ public class TitleMenuButton : MonoBehaviour
 
     public void OnClickHelpButton()
     {
+        GFunc.GetRootObject("UiCanvas").FindChildObject("HelpPanel").SetActive(true);
         //도움말 켜는 코드
     }
 
@@ -83,11 +84,16 @@ public class TitleMenuButton : MonoBehaviour
 
     public void OnClickMainMenuButton()
     {
-        if(GameManager.instance.stageOneNum >= 5)
+        GameManager.instance.stageOneNum += 1;
+        if (GameManager.instance.stageOneNum > 10)
         {
             GameManager.instance.isStageOneEnd = true;
+            GameManager.instance.isStageTwoEnd = true;
         }
-        GameManager.instance.stageOneNum += 1;
+        else if (GameManager.instance.stageOneNum > 5)
+        {
+            GameManager.instance.isStageOneEnd = true;
+        }        
         GFunc.LoadScene("TitleSceneLJY");
     }
 }

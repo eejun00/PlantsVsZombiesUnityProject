@@ -7,11 +7,7 @@ public class NextStageBtn : MonoBehaviour
     public void OnClickNextStageOneBtn()
     {
         int stageNum = GameManager.instance.stageOneNum;
-        if(stageNum == 0)
-        {
-            GFunc.LoadScene("Ending");
-        }
-        else if(stageNum == 1)
+        if(stageNum == 1)
         {
             GFunc.LoadScene("Stage1-2Scene");
             GameManager.instance.PassStage();
