@@ -50,7 +50,12 @@ MonoBehaviour:
   buketZombiePrefab: {fileID: 8474871154620324479, guid: 3e36fdf636c81804d8d60187474c64e1, type: 3}
   dancingZombiePrefab: {fileID: 4967545202809856598, guid: eef99ba0bc170bd4ab35725354a088f8, type: 3}
   backupZombiePrefab: {fileID: 2010339816455617731, guid: aa45941aa33adb14faa909da24b5c336, type: 3}
-  otherZombieList: []
+  otherZombieList:
+  - {fileID: 7372782953567871120, guid: 6d2164b869e0c3243aca4a929d6af61e, type: 3}
+  - {fileID: 7372782953567871120, guid: 6d2164b869e0c3243aca4a929d6af61e, type: 3}
+  - {fileID: 7485832820614298974, guid: a49c9a8ce17eb2c468f3e71d8914d943, type: 3}
+  - {fileID: 8474871154620324479, guid: 3e36fdf636c81804d8d60187474c64e1, type: 3}
+  - {fileID: 4967545202809856598, guid: eef99ba0bc170bd4ab35725354a088f8, type: 3}
   otherZombieCount: 
   spawnInterval: 5
   allowedYPositions:
