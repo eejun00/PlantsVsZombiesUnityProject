@@ -16,6 +16,7 @@ public class StageManager : MonoBehaviour
         {
             GameManager.instance.stageOneNum = stagenum;
         }
+        GameManager.instance.isStageClear = false;
         GameManager.instance.isGameover = false;
         GameManager.instance.stagePlaying = false;
         GameManager.instance.isWave = false;
