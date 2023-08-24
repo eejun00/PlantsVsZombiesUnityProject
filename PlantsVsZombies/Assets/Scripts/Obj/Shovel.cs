@@ -17,13 +17,14 @@ public class Shovel : MonoBehaviour
 
     private void Update()
     {
+        
         // 마우스 좌클릭 시 식물 제거
         if (Input.GetMouseButtonDown(0) && isButtonImageActive)
         {
             RemovePlant();
         }
 
-        // 아무 키나 입력하면 버튼 이미지를 ShovelBank의 위치로 돌아가게 함
+        //아무 키나 입력하면 버튼 이미지를 ShovelBank의 위치로 돌아가게 함
         if (isButtonImageActive && Input.anyKeyDown)
         {
             // 버튼 이미지를 ShovelBank의 위치로 이동시킴
@@ -35,7 +36,7 @@ public class Shovel : MonoBehaviour
         if (isButtonImageActive)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0f;
+            mousePos.z = 101f;
 
             buttonImage.rectTransform.position = mousePos;
         }
@@ -45,7 +46,7 @@ public class Shovel : MonoBehaviour
     {
         // 버튼 이미지 활성화 및 위치 설정
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0f;
+        mousePos.z = 101f;
 
         buttonImage.rectTransform.position = mousePos;
         isButtonImageActive = true;
