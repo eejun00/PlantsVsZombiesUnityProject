@@ -36,7 +36,10 @@ public class DancingZombie : Zombies
 
     private void OnDestroy()
     {
+        if(spotlight != null)
+        { 
         Destroy(spotlight);
+        }
     }
 
     public void SpawnBackupZombie()
