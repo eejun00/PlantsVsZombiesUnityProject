@@ -46,9 +46,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Zombie
-    uniqueID: 899527767
-    locked: 0
   - name: FrontUI
     uniqueID: 967639845
+    locked: 0
+  - name: Zombie
+    uniqueID: 899527767
     locked: 0

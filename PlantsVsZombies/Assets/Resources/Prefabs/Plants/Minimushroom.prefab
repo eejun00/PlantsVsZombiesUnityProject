@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minimushroom
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 9dad0f513f3a0254cb88f3d980bcdc3f, type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
     - target: {fileID: -7910364038421362986, guid: 9dad0f513f3a0254cb88f3d980bcdc3f, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: 0
