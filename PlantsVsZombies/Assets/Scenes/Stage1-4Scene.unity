@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3143192769920706096, guid: ba79a45f3d2f21243928bd3c319826b3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3143192769920706096, guid: ba79a45f3d2f21243928bd3c319826b3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 492220774577676646, guid: 3167d0add4d527949b5d296058dd0339, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 492220774577676646, guid: 3167d0add4d527949b5d296058dd0339, type: 3}
       propertyPath: m_AnchorMax.x
@@ -592,11 +592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 492220774577676665, guid: 3167d0add4d527949b5d296058dd0339, type: 3}
       propertyPath: m_SortingLayerID
-      value: 967639845
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492220774756591186, guid: 3167d0add4d527949b5d296058dd0339, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492220774811788260, guid: 3167d0add4d527949b5d296058dd0339, type: 3}
       propertyPath: m_SortingLayer
@@ -1753,13 +1753,25 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4282006074
       objectReference: {fileID: 0}
+    - target: {fileID: 4977192329301333524, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4977192329301333531, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4977192330192753358, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753970, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_Name
       value: GameClearCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977192330192753970, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753971, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_Pivot.x
@@ -1771,7 +1783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753971, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753971, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3420,7 +3432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3845938138844131146, guid: f86976e6fe853e442b372658dd6e9762, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3845938138844131146, guid: f86976e6fe853e442b372658dd6e9762, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3598,12 +3610,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 331483302}
+  - {fileID: 214264539}
   - {fileID: 340106826}
   - {fileID: 1656861890}
   - {fileID: 787727468}
   - {fileID: 2068624631}
   - {fileID: 1880869091}
-  - {fileID: 214264539}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3619,6 +3631,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1892026350}
     m_Modifications:
+    - target: {fileID: 5564330403936958168, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 5564330403936958172, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
@@ -3633,7 +3649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5564330403936958173, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5564330403936958173, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3845,7 +3861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3812612298257822429, guid: b05ddd52599851447bc30e12aa1ac98b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3812612298257822429, guid: b05ddd52599851447bc30e12aa1ac98b, type: 3}
       propertyPath: m_AnchorMax.x
