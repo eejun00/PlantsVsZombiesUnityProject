@@ -586,6 +586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1892026350}
     m_Modifications:
+    - target: {fileID: 5564330402173732462, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 964475793
+      objectReference: {fileID: 0}
     - target: {fileID: 5564330402699055280, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3322,7 +3326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -234.00003, y: 305.99997}
+  m_AnchoredPosition: {x: -234, y: 305.99997}
   m_SizeDelta: {x: -1275.54, y: -718.86993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806765243

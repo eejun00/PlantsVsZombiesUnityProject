@@ -5873,6 +5873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1892026350}
     m_Modifications:
+    - target: {fileID: 5564330402173732462, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 964475793
+      objectReference: {fileID: 0}
     - target: {fileID: 5564330403936958172, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
