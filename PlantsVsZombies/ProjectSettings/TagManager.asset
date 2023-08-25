@@ -52,3 +52,6 @@ TagManager:
   - name: Zombie
     uniqueID: 899527767
     locked: 0
+  - name: Menu UI
+    uniqueID: 964475793
+    locked: 0

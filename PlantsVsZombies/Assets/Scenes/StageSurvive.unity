@@ -640,7 +640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5564330403936958173, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5564330403936958173, guid: 60d2525b34901934587888a39b9ff9f3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3651,7 +3651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753971, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753971, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6293,8 +6293,8 @@ MonoBehaviour:
   - 3
   - 1
   initialSpawnInterval: 5
-  minSpawnInterval: 2
-  spawnIntervalDecreaseRate: 0.9
+  minSpawnInterval: 0.5
+  spawnIntervalDecreaseRate: 0.5
 --- !u!1 &1953984363
 GameObject:
   m_ObjectHideFlags: 0

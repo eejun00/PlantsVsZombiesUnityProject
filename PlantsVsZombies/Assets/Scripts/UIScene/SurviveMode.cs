@@ -46,7 +46,7 @@ public class SurviveMode : MonoBehaviour
 
     IEnumerator SpawnZombieRoutine()
     {
-        yield return new WaitForSeconds(2.0f); // 시작 후 2초 대기
+        yield return new WaitForSeconds(4.0f); // 시작 후 4초 대기
 
         while (true)
         {
@@ -60,7 +60,7 @@ public class SurviveMode : MonoBehaviour
             waveCount += 1; // 웨이브 카운트 증가
             //GameManager.instance.isWave = true; // 웨이브 시작을 게임 매니저에 알림
 
-            yield return new WaitForSeconds(2.0f); // 웨이브 시작 후 2초 대기
+            yield return new WaitForSeconds(4.0f); // 웨이브 시작 후 2초 대기
 
             // 생성 간격을 감소시키고, 최소 간격에 도달하지 않도록 조정
             currentSpawnInterval *= spawnIntervalDecreaseRate;
