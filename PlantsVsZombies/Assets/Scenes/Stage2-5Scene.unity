@@ -3089,7 +3089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -234.00003, y: 305.99997}
+  m_AnchoredPosition: {x: -234, y: 305.99997}
   m_SizeDelta: {x: -1275.54, y: -718.86993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806765243
@@ -3398,6 +3398,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4977192329716438720, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753970, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_Name
       value: GameClearCanvas
@@ -3416,7 +3420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753971, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4977192330192753971, guid: 957608a44876ef04bb297358f48a99ab, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6057,7 +6061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3845938138844131146, guid: f86976e6fe853e442b372658dd6e9762, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3845938138844131146, guid: f86976e6fe853e442b372658dd6e9762, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6237,8 +6241,8 @@ RectTransform:
   - {fileID: 806765242}
   - {fileID: 326548856}
   - {fileID: 858412515}
-  - {fileID: 1752529012}
   - {fileID: 1850968874}
+  - {fileID: 1752529012}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
