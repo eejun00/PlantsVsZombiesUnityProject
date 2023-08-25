@@ -38,7 +38,7 @@ public class StageGauge : MonoBehaviour
         else if (currentTime < fillDuration)
         {           
             currentTime += Time.deltaTime;
-            Vector3 increaseAmount = new Vector3(230f / fillDuration, 0.0f, 0.0f); // 로컬 포지션 증가량
+            Vector3 increaseAmount = new Vector3(220f / fillDuration, 0.0f, 0.0f); // 로컬 포지션 증가량
             zombieHead.transform.localPosition -= increaseAmount * Time.deltaTime;
             float fillAmount = Mathf.Lerp(0, 1, currentTime / fillDuration);
             fillImage.fillAmount = fillAmount;
