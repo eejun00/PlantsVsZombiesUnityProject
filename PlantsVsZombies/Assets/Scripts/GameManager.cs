@@ -125,16 +125,17 @@ public class GameManager : MonoBehaviour
             uiCanvas = GFunc.GetRootObject("UiCanvas");
             Button stageOneBtn = uiCanvas.FindChildComponent<Button>("Stage1Button");
             TMP_Text stageOnetext = uiCanvas.FindChildComponent<TMP_Text>("Stage1");
-            Button stageTowBtn = uiCanvas.FindChildComponent<Button>("Stage2Button");
+            Button stageTwoBtn = uiCanvas.FindChildComponent<Button>("Stage2Button");
             TMP_Text stageTwotext = uiCanvas.FindChildComponent<TMP_Text>("Stage2");
             
             if(isStageTwoEnd || stageOneNum > 10)
             {
                 isStageOneEnd = true;
                 stageOneBtn.enabled = false;
+                stageTwoBtn.enabled = false;
                 Image btnImg = stageOneBtn.GetComponent<Image>();
                 btnImg.DOColor(new Color(0.4f, 0.4f, 0.4f), 2f);
-                Image btnImgTwo = stageOneBtn.GetComponent<Image>();
+                Image btnImgTwo = stageTwoBtn.GetComponent<Image>();
                 btnImgTwo.DOColor(new Color(0.4f, 0.4f, 0.4f), 2f);
                 stageOnetext.text = string.Format("5");
                 stageTwotext.text = string.Format("5");

@@ -9,14 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/KJHScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/EndingScene.unity
-    guid: 48a9cc08cd0d47a42b9fbe69320d398a
-  - enabled: 1
     path: Assets/Scenes/TitleSceneLJY.unity
     guid: d0e6a404aaf116947831ad58ef8ab480
-  - enabled: 1
-    path: Assets/Scenes/LJYScene New.unity
-    guid: 26e4ea40a7dfed84da66d3f0e08188eb
   - enabled: 1
     path: Assets/Scenes/Stage1-1Scene.unity
     guid: bd9cae8fd4fc42143ac48d2e1638d19e
@@ -50,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StageSurvive.unity
     guid: fc35ba578d4e71449874db9faed37618
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 48a9cc08cd0d47a42b9fbe69320d398a
   - enabled: 1
     path: Assets/Scenes/EndingScene2.unity
     guid: 07230f0b196153a4bae8026c2e274002
